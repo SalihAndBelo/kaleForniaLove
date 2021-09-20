@@ -10,18 +10,19 @@
 const saladApp = {};
 
 // Declare url and API key as properties on the namespace object
-saladApp.apiUrl = "https://api.spoonacular.com/recipes/complexSearch";
-saladApp.apiKey = "045af448730b4c4080d271496d8b95bc";
+saladApp.apiUrl = "https://api.edamam.com/api/recipes/v2";
+saladApp.app_key = "b6093d9d19dda2ef504a3b36f99113b1";
+saladApp.app_id = "560f8d94";
 
 // Get recipe data from the API
 saladApp.getRecipes = () => {
   const url = new URL(saladApp.apiUrl);
   url.search = new URLSearchParams({
-    apiKey: saladApp.apiKey,
-    query: "salad",
-    instructionsRequired: true,
-    addRecipeInformation: true,
-    addRecipeNutrition: true,
+    app_key: saladApp.app_key,
+    app_id: saladApp.app_id,
+    q: "salad",
+    dishType: "salad",
+    type: "public",
   });
 
   // Fetch request
@@ -30,7 +31,7 @@ saladApp.getRecipes = () => {
       return response.json();
     })
     .then((jsonResponse) => {
-      const saladObjects = jsonResponse.results;
+      const saladObjects = jsonResponse.hits;
       console.log(saladObjects);
     });
 };
@@ -41,19 +42,14 @@ saladApp.userSelection = () => {
     event.preventDefault();
     console.log("Submitted!");
 
-    const greens = document.querySelector("input[name=greens]:checked").value;
-    const protein = document.querySelector("input[name=protein]:checked").value;
-    const garnish = document.querySelector("input[name=garnish]:checked").value;
-    const dressing = document.querySelector(
-      "input[name=dressing]:checked"
-    ).value;
-    let fruitsAndVeggies = document.querySelectorAll(
-      "input[name=fruitsAndVeggies]:checked"
+    let ingredients = document.querySelectorAll(
+      "input[name=ingredient]:checked"
     );
-    fruitsAndVeggies.forEach((ingredient) => {
-      console.log(ingredient.value);
+
+    ingredients.forEach((item) => {
+      let itemValue = item.value;
+      console.log(itemValue);
     });
-    console.log(greens, protein, garnish, dressing);
   });
 };
 
