@@ -4,13 +4,193 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kale-fornia Love.</title>
+    <title>🥬 Kale-fornia Love.</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="mainWrapper">
-      <header></header>
-      <main></main>
+      <header>
+        <h1>Kale-fornia Love.</h1>
+        <p>
+          Need a quick and easy way to make a salad? Select from the options
+          below to try out some of these unbe-LEAF-ably delicious recipes!
+        </p>
+        <p>Lettuce get started!</p>
+      </header>
+      <main>
+        <section class="ingredientSelection">
+          <form action="#" method="POST" class="ingredientForm">
+            <fieldset class="greens">
+              <legend>Greens</legend>
+              <p>Choose your greens</p>
+
+              <label for="mixedGreens">Mixed Greens</label>
+              <input
+                type="radio"
+                id="mixedGreens"
+                name="greens"
+                value="mixed greens"
+              />
+
+              <label for="lettuce">Lettuce</label>
+              <input type="radio" id="lettuce" name="greens" value="lettuce" />
+
+              <label for="spinach">Spinach</label>
+              <input type="radio" id="spinach" name="greens" value="spinach" />
+
+              <label for="kale">Kale</label>
+              <input type="radio" id="kale" name="greens" value="kale" />
+
+              <label for="arugula">Arugula</label>
+              <input type="radio" id="arugula" name="greens" value="arugula" />
+            </fieldset>
+
+            <fieldset class="fruitsAndVeggies">
+              <legend>Fruits and Veggies</legend>
+              <p>Choose 1-4 fruits and/or veggies</p>
+
+              <label for="tomato">Tomato</label>
+              <input
+                type="checkbox"
+                id="tomato"
+                name="fruitsAndVeggies"
+                value="tomato"
+              />
+
+              <label for="cucumber">Cucumber</label>
+              <input
+                type="checkbox"
+                id="cucumber"
+                name="fruitsAndVeggies"
+                value="cucumber"
+              />
+
+              <label for="greenPepper">Green pepper</label>
+              <input
+                type="checkbox"
+                id="greenPepper"
+                name="fruitsAndVeggies"
+                value="green pepper"
+              />
+
+              <label for="bellPepper">Bell pepper</label>
+              <input
+                type="checkbox"
+                id="bellPepper"
+                name="fruitsAndVeggies"
+                value="bell pepper"
+              />
+
+              <label for="onion">Onion</label>
+              <input
+                type="checkbox"
+                id="onion"
+                name="fruitsAndVeggies"
+                value="onion"
+              />
+
+              <label for="avocado">Avocado</label>
+              <input
+                type="checkbox"
+                id="avocado"
+                name="fruitsAndVeggies"
+                value="avocado"
+              />
+
+              <label for="celery">Celery</label>
+              <input
+                type="checkbox"
+                id="celery"
+                name="fruitsAndVeggies"
+                value="celery"
+              />
+            </fieldset>
+
+            <fieldset class="protein">
+              <legend>Proteins</legend>
+              <p>Choose your protein</p>
+
+              <label for="chickpeas">Chickpeas</label>
+              <input
+                type="radio"
+                id="chickpeas"
+                name="protein"
+                value="chickpeas"
+              />
+
+              <label for="blackBeans">Black Beans</label>
+              <input
+                type="radio"
+                id="blackBeans"
+                name="protein"
+                value="black beans"
+              />
+
+              <label for="kidneyBeans">Kidney Beans</label>
+              <input
+                type="radio"
+                id="kidneyBeans"
+                name="protein"
+                value="kidney beans"
+              />
+            </fieldset>
+
+            <fieldset class="garnish">
+              <legend>Garnishes</legend>
+              <p>Choose your garnish</p>
+
+              <label for="hempSeeds">Hemp Seeds</label>
+              <input
+                type="radio"
+                id="hempSeeds"
+                name="garnish"
+                value="hemp seeds"
+              />
+
+              <label for="sunflowerSeeds">Sunflower Seeds</label>
+              <input
+                type="radio"
+                id="sunflowerSeeds"
+                name="garnish"
+                value="sunflower seeds"
+              />
+
+              <label for="almonds">Almonds</label>
+              <input type="radio" id="almonds" name="garnish" value="almonds" />
+            </fieldset>
+
+            <fieldset class="dressing">
+              <legend>Dressing</legend>
+              <p>Choose your dressing</p>
+
+              <label for="italian">Italian</label>
+              <input
+                type="radio"
+                id="italian"
+                name="dressing"
+                value="italian"
+              />
+
+              <label for="balsamicVinaigrette">Balsamic Vinaigrette</label>
+              <input
+                type="radio"
+                id="balsamicVinaigrette"
+                name="dressing"
+                value="balsamic vinaigrette"
+              />
+
+              <label for="ranch">Ranch</label>
+              <input type="radio" id="ranch" name="dressing" value="ranch" />
+            </fieldset>
+
+            <button type="submit">TOSS IT UP</button>
+          </form>
+        </section>
+        <!-- .ingredientSelection -->
+        <!-- User recommendations go here -->
+        <section class="saladRecommendations"></section>
+      </main>
+      <footer></footer>
     </div>
     <script src="script.js"></script>
   </body>

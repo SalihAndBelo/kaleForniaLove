@@ -35,9 +35,32 @@ saladApp.getRecipes = () => {
     });
 };
 
+saladApp.userSelection = () => {
+  const ingredientSelectionForm = document.querySelector("form");
+  ingredientSelectionForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    console.log("Submitted!");
+
+    const greens = document.querySelector("input[name=greens]:checked").value;
+    const protein = document.querySelector("input[name=protein]:checked").value;
+    const garnish = document.querySelector("input[name=garnish]:checked").value;
+    const dressing = document.querySelector(
+      "input[name=dressing]:checked"
+    ).value;
+    let fruitsAndVeggies = document.querySelectorAll(
+      "input[name=fruitsAndVeggies]:checked"
+    );
+    fruitsAndVeggies.forEach((ingredient) => {
+      console.log(ingredient.value);
+    });
+    console.log(greens, protein, garnish, dressing);
+  });
+};
+
 // Added our init method
 saladApp.init = () => {
   saladApp.getRecipes();
+  saladApp.userSelection();
 };
 
 // Initialized our init method
