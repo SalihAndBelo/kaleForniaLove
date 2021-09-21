@@ -32,9 +32,9 @@ app.getRecipes = (userInput) => {
     .then((response) => {
       return response.json();
     })
-    .then((jsonResponse) => {
-      app.displaySelection(jsonResponse.hits);
-      console.log(jsonResponse.hits);
+    .then((data) => {
+      app.displaySelection(data.hits);
+      console.log(data.hits);
     });
 };
 
