@@ -14,8 +14,6 @@ const app = {};
 app.apiUrl = "https://api.edamam.com/api/recipes/v2";
 app.appKey = "b6093d9d19dda2ef504a3b36f99113b1";
 app.appId = "560f8d94";
-app.ingredientForm = document.querySelector("form");
-app.ingredients = document.querySelectorAll("input[name=ingredient]:checked");
 
 // Get recipe data from the API
 app.getRecipes = (userInput) => {
@@ -33,8 +31,8 @@ app.getRecipes = (userInput) => {
       return response.json();
     })
     .then((data) => {
-      app.displaySelection(data.hits);
       console.log(data.hits);
+      app.displaySelection(data.hits);
     });
 };
 
@@ -50,7 +48,8 @@ app.userSelection = () => {
   app.ingredientForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    let ingredientArray = [...app.ingredients].map((ingredient) => {
+    const ingredients = document.querySelectorAll("input[name=ingredient]:checked");
+    let ingredientArray = [...ingredients].map((ingredient) => {
       return ingredient.value;
     });
     console.log(ingredientArray);
@@ -64,6 +63,7 @@ app.userSelection = () => {
 
 // Added our init method and passed all functions that need to be called inside of it
 app.init = () => {
+  app.ingredientForm = document.querySelector("form"); 
   app.userSelection();
 };
 
