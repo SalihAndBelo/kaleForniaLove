@@ -40,35 +40,34 @@ app.getRecipes = (userInput) => {
 // Display salad selection to the page
 app.displaySelection = (saladRecipes) => {
   saladRecipes.forEach((salad) => {
-    const title = document.createElement('h3');
+    const title = document.createElement("h2");
     title.innerText = salad.recipe.label;
-    const cuisineTypeTitle = document.createElement('h4');
-    cuisineTypeTitle.innerText = "Cuisine Type";
-    const cuisineType = document.createElement('p');
-    cuisineType.innerText = salad.recipe.cuisineType[0]
-    const image = document.createElement('img');
+
+    const cuisineType = document.createElement("h3");
+    cuisineType.innerHTML = `Cuisine Type: <span>${salad.recipe.cuisineType[0]}</span>`;
+
+    const image = document.createElement("img");
     image.src = salad.recipe.image;
     image.alt = salad.recipe.label;
-    const recipeLink = document.createElement('a');
-    const recipeTitle = document.createElement('h5')
-    recipeTitle.innerText = "Below is the link to the full recipe:"
-    recipeLink.href = salad.recipe.url
-    recipeLink.innerText = "Click here"
 
-    const saladRecommendations = document.createElement('li');
-    saladRecommendations.classList.add('saladRecommendations')
+    const recipeLink = document.createElement("p");
+    recipeLink.innerHTML = `<a href="${salad.recipe.url}">Click here to try this delicious recipe!</a>
+`;
+
+    const saladRecommendations = document.createElement("div");
 
     saladRecommendations.appendChild(title);
-    saladRecommendations.appendChild(cuisineTypeTitle);
     saladRecommendations.appendChild(cuisineType);
     saladRecommendations.appendChild(image);
     saladRecommendations.appendChild(recipeLink);
-    saladRecommendations.appendChild(recipeTitle);
 
-    document.querySelector('#saladCombo').appendChild(saladRecommendations);
-
+    document.querySelector("#saladCombo").appendChild(saladRecommendations);
   });
 };
+
+// Create a condition where only one selection can be made for the "greens" category
+
+
 
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
