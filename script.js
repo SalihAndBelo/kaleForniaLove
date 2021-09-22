@@ -31,6 +31,7 @@ app.getRecipes = (userInput) => {
       return response.json();
     })
     .then((data) => {
+      document.querySelector('#saladCombo').innerHTML = '';
       console.log(data.hits);
       app.displaySelection(data.hits);
     });
@@ -39,9 +40,34 @@ app.getRecipes = (userInput) => {
 // Display salad selection to the page
 app.displaySelection = (saladRecipes) => {
   saladRecipes.forEach((salad) => {
-    console.log(salad);
+    const title = document.createElement("h2");
+    title.innerText = salad.recipe.label;
+
+    const cuisineType = document.createElement("h3");
+    cuisineType.innerHTML = `Cuisine Type: <span>${salad.recipe.cuisineType[0]}</span>`;
+
+    const image = document.createElement("img");
+    image.src = salad.recipe.image;
+    image.alt = salad.recipe.label;
+
+    const recipeLink = document.createElement("p");
+    recipeLink.innerHTML = `<a href="${salad.recipe.url}">Click here to try this delicious recipe!</a>
+`;
+
+    const saladRecommendations = document.createElement("div");
+
+    saladRecommendations.appendChild(title);
+    saladRecommendations.appendChild(cuisineType);
+    saladRecommendations.appendChild(image);
+    saladRecommendations.appendChild(recipeLink);
+
+    document.querySelector("#saladCombo").appendChild(saladRecommendations);
   });
 };
+
+// Create a condition where only one selection can be made for the "greens" category
+
+
 
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
