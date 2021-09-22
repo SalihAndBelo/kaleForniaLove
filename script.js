@@ -3,14 +3,14 @@
 
 // Record user ingredient selection(s) and store them in a variable.
 // Based on the user selection, pull a random salad recipe from API call which matches some or all of the selected ingredients.
-//    - Display the salad title, image, summary and link to the recipe on the page.
+//    - Display the salad title, image, recipe and link to the recipe on the page.
 // Add error handling if a user does not select anything from ingredient list or if there are not matching recipes based on user selection.
 // Add a reset function which will clear the page and allow the user to select new ingredients.
 
 // Namespace object
 const app = {};
 
-// Namespace object properties
+// Namespace object properties;
 app.apiUrl = "https://api.edamam.com/api/recipes/v2";
 app.appKey = "b6093d9d19dda2ef504a3b36f99113b1";
 app.appId = "560f8d94";
@@ -74,22 +74,27 @@ app.userSelection = () => {
   app.ingredientForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const ingredients = document.querySelectorAll("input[name=ingredient]:checked");
+    // Select all the checked checkboxes
+    const ingredients = document.querySelectorAll(
+      "input[name=ingredient]:checked"
+    );
+    // Iterate each node list object and return the value of the checkbox into an array
     let ingredientArray = [...ingredients].map((ingredient) => {
       return ingredient.value;
     });
-    console.log(ingredientArray);
 
+    // Convert array of values into a string
     let userSelectedIngredients = ingredientArray.toString();
     console.log(userSelectedIngredients);
 
+    // Pass the values as an argument to the API call
     app.getRecipes(userSelectedIngredients);
   });
 };
 
 // Added our init method and passed all functions that need to be called inside of it
 app.init = () => {
-  app.ingredientForm = document.querySelector("form"); 
+  app.ingredientForm = document.querySelector("form");
   app.userSelection();
 };
 
