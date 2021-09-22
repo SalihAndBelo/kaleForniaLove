@@ -5,125 +5,302 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🥬 Kale-fornia Love.</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600&family=Sofia&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
     <div class="mainWrapper">
       <header>
-        <h1>Kale-fornia Love.</h1>
-        <p>
-          Need a quick and easy way to make a salad? Select from the options
-          below to try out some of these unbe-LEAF-ably delicious recipes!
-        </p>
-        <p>Lettuce get started!</p>
+        <div class="greetingContainer">
+          <h1>Kale-fornia Love.</h1>
+          <img src="./assets/salad-header.gif" alt="" />
+          <p>
+            Need a quick and easy way to make a salad? Select from the options
+            below to try out some of these unbe-LEAF-ably delicious recipes!
+          </p>
+          <p>Lettuce get started!</p>
+        </div>
       </header>
       <main>
         <section class="ingredientSelection">
           <form action="#" method="POST" class="ingredientForm">
             <fieldset class="greens">
-              <legend>Greens</legend>
-              <p>Choose your greens</p>
+              <legend>Greens<span>Choose your greens</span></legend>
 
-              <label for="mixedGreens">Mixed Greens</label>
-              <input
-                type="checkbox"
-                id="mixedGreens"
-                name="ingredient"
-                value="mixed greens"
-              />
+              <div class="checkboxContainer">
+                <label for="mixedGreens">
+                  <img src="./assets/salad.png" alt="" />
+                  <p>Mixed Greens</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="mixedGreens"
+                  name="ingredient"
+                  value="mixed greens"
+                />
+              </div>
 
-              <label for="lettuce">Lettuce</label>
-              <input
-                type="checkbox"
-                id="lettuce"
-                name="ingredient"
-                value="lettuce"
-              />
+              <div class="checkboxContainer">
+                <label for="lettuce">
+                  <img src="./assets/lettuce.png" alt="" />
+                  <p>Lettuce</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="lettuce"
+                  name="ingredient"
+                  value="lettuce"
+                />
+              </div>
 
-              <label for="spinach">Spinach</label>
-              <input
-                type="checkbox"
-                id="spinach"
-                name="ingredient"
-                value="spinach"
-              />
+              <div class="checkboxContainer">
+                <label for="spinach">
+                  <img src="./assets/spinach.png" alt="" />
+                  <p>Spinach</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="spinach"
+                  name="ingredient"
+                  value="spinach"
+                />
+              </div>
 
-              <label for="kale">Kale</label>
-              <input type="checkbox" id="kale" name="ingredient" value="kale" />
+              <div class="checkboxContainer">
+                <label for="kale">
+                  <img src="./assets/kale.png" alt="" />
+                  <p>Kale</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="kale"
+                  name="ingredient"
+                  value="kale"
+                />
+              </div>
 
-              <label for="arugula">Arugula</label>
-              <input
-                type="checkbox"
-                id="arugula"
-                name="ingredient"
-                value="arugula"
-              />
+              <div class="checkboxContainer">
+                <label for="arugula">
+                  <img src="./assets/arugula.png" alt="" />
+                  <p>Arugula</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="arugula"
+                  name="ingredient"
+                  value="arugula"
+                />
+              </div>
+
+              <div class="checkboxContainer">
+                <label for="watercress">
+                  <img src="./assets/watercress.png" alt="" />
+                  <p>Watercress</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="watercress"
+                  name="ingredient"
+                  value="watercress"
+                />
+              </div>
             </fieldset>
 
             <fieldset class="fruitsAndVeggies">
-              <legend>Fruits and Veggies</legend>
-              <p>Choose 1-4 fruits and/or veggies</p>
+              <legend>
+                Fruits and Veggies <span>Choose 1-4 fruits and/or veggies</span>
+              </legend>
 
-              <label for="tomato">Tomato</label>
-              <input
-                type="checkbox"
-                id="tomato"
-                name="ingredient"
-                value="tomato"
-              />
+              <div class="checkboxContainer">
+                <label for="apple">
+                  <img src="./assets/apple.png" alt="" />
+                  <p>Apple</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="apple"
+                  name="ingredient"
+                  value="apple"
+                />
+              </div>
 
-              <label for="cucumber">Cucumber</label>
-              <input
-                type="checkbox"
-                id="cucumber"
-                name="ingredient"
-                value="cucumber"
-              />
+              <div class="checkboxContainer">
+                <label for="tomato">
+                  <img src="./assets/tomato.png" alt="" />
+                  <p>Tomato</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="tomato"
+                  name="ingredient"
+                  value="tomato"
+                />
+              </div>
 
-              <label for="greenPepper">Green pepper</label>
-              <input
-                type="checkbox"
-                id="greenPepper"
-                name="ingredient"
-                value="green pepper"
-              />
+              <div class="checkboxContainer">
+                <label for="cabbage">
+                  <img src="./assets/cabbage.png" alt="" />
+                  <p>Cabbage</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="cabbage"
+                  name="ingredient"
+                  value="cabbage"
+                />
+              </div>
 
-              <label for="bellPepper">Bell pepper</label>
-              <input
-                type="checkbox"
-                id="bellPepper"
-                name="ingredient"
-                value="bell pepper"
-              />
+              <div class="checkboxContainer">
+                <label for="cucumber">
+                  <img src="./assets/cucumber.png" alt="" />
+                  <p>Cucumber</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="cucumber"
+                  name="ingredient"
+                  value="cucumber"
+                />
+              </div>
 
-              <label for="onion">Onion</label>
-              <input
-                type="checkbox"
-                id="onion"
-                name="ingredient"
-                value="onion"
-              />
+              <div class="checkboxContainer">
+                <label for="carrot">
+                  <img src="./assets/carrot.png" alt="" />
+                  <p>Carrot</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="carrot"
+                  name="ingredient"
+                  value="carrot"
+                />
+              </div>
 
-              <label for="avocado">Avocado</label>
-              <input
-                type="checkbox"
-                id="avocado"
-                name="fruitsAndVeggies"
-                value="avocado"
-              />
+              <div class="checkboxContainer">
+                <label for="broccoli">
+                  <img src="./assets/broccoli.png" alt="" />
+                  <p>Broccoli</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="broccoli"
+                  name="ingredient"
+                  value="broccoli"
+                />
+              </div>
 
-              <label for="celery">Celery</label>
-              <input
-                type="checkbox"
-                id="celery"
-                name="ingredient"
-                value="celery"
-              />
+              <div class="checkboxContainer">
+                <label for="olives">
+                  <img src="./assets/olive.png" alt="" />
+                  <p>Olives</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="olives"
+                  name="ingredient"
+                  value="olives"
+                />
+              </div>
+
+              <div class="checkboxContainer">
+                <label for="Mushrooms">
+                  <img src="./assets/mushroom.png" alt="" />
+                  <p>Mushrooms</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="Mushrooms"
+                  name="ingredient"
+                  value="Mushrooms"
+                />
+              </div>
+
+              <div class="checkboxContainer">
+                <label for="greenPepper">
+                  <img src="./assets/pepper.png" alt="" />
+                  <p>Green Pepper</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="greenPepper"
+                  name="ingredient"
+                  value="green pepper"
+                />
+              </div>
+
+              <div class="checkboxContainer">
+                <label for="bellPepper">
+                  <img src="./assets/bell-pepper.png" alt="" />
+                  <p>Bell Pepper</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="bellPepper"
+                  name="ingredient"
+                  value="bell pepper"
+                />
+              </div>
+
+              <div class="checkboxContainer">
+                <label for="redOnion">
+                  <img src="./assets/onion.png" alt="" />
+                  <p>Red Onion</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="redOnion"
+                  name="ingredient"
+                  value="red onion"
+                />
+              </div>
+
+              <div class="checkboxContainer">
+                <label for="avocado">
+                  <img src="./assets/avocado.png" alt="" />
+                  <p>Avocado</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="avocado"
+                  name="fruitsAndVeggies"
+                  value="avocado"
+                />
+              </div>
+
+              <div class="checkboxContainer">
+                <label for="celery">
+                  <img src="./assets/celery.png" alt="" />
+                  <p>Celery</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="celery"
+                  name="ingredient"
+                  value="celery"
+                />
+              </div>
+
+              <div class="checkboxContainer">
+                <label for="beets">
+                  <img src="./assets/beet.png" alt="" />
+                  <p>Beets</p>
+                </label>
+                <input
+                  type="checkbox"
+                  id="beets"
+                  name="ingredient"
+                  value="beets"
+                />
+              </div>
             </fieldset>
 
             <fieldset class="protein">
-              <legend>Proteins</legend>
-              <p>Choose your protein</p>
+              <legend>Proteins <span>Choose your protein</span></legend>
 
               <label for="chickpeas">Chickpeas</label>
               <input
@@ -133,26 +310,52 @@
                 value="chickpeas"
               />
 
-              <label for="blackBeans">Black Beans</label>
+              <label for="beans">Beans</label>
               <input
                 type="checkbox"
-                id="blackBeans"
+                id="beans"
                 name="ingredient"
-                value="black beans"
+                value="beans"
               />
 
-              <label for="kidneyBeans">Kidney Beans</label>
+              <label for="lentils">Lentils</label>
               <input
                 type="checkbox"
-                id="kidneyBeans"
+                id="lentils"
                 name="ingredient"
-                value="kidney beans"
+                value="lentils"
+              />
+
+              <label for="chicken">Chicken</label>
+              <input
+                type="checkbox"
+                id="chicken"
+                name="ingredient"
+                value="chicken"
+              />
+
+              <label for="bacon">Bacon</label>
+              <input
+                type="checkbox"
+                id="bacon"
+                name="ingredient"
+                value="bacon"
+              />
+
+              <label for="fish">Fish</label>
+              <input type="checkbox" id="fish" name="ingredient" value="fish" />
+
+              <label for="steak">Steak</label>
+              <input
+                type="checkbox"
+                id="steak"
+                name="ingredient"
+                value="steak"
               />
             </fieldset>
 
             <fieldset class="garnish">
-              <legend>Garnishes</legend>
-              <p>Choose your garnish</p>
+              <legend>Garnishes <span>Choose your granish</span></legend>
 
               <label for="hempSeeds">Hemp Seeds</label>
               <input
@@ -180,8 +383,7 @@
             </fieldset>
 
             <fieldset class="dressing">
-              <legend>Dressing</legend>
-              <p>Choose your dressing</p>
+              <legend>Dressing <span>Choose your dressing</span></legend>
 
               <label for="italian">Italian</label>
               <input
@@ -206,14 +408,23 @@
                 name="ingredient"
                 value="ranch"
               />
+
+              <label for="oliveOil">Olive Oil</label>
+              <input
+                type="checkbox"
+                id="oliveOil"
+                name="ingredient"
+                value="olive oil"
+              />
             </fieldset>
 
             <button type="submit">TOSS IT UP</button>
           </form>
         </section>
         <!-- .ingredientSelection -->
+
         <!-- User recommendations go here -->
-        <section class="saladRecommendations"></section>
+        <section id="saladCombo"></section>
       </main>
       <footer></footer>
     </div>

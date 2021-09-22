@@ -1,1 +1,73 @@
 @import "setup";
+@import "typography";
+@import "vars";
+@import "general";
+
+//-----Header-----//
+.greetingContainer {
+  padding-top: 3rem;
+  text-align: center;
+  color: $grassGreen;
+
+  img {
+    width: 450px;
+    margin-top: 1rem;
+  }
+
+  p {
+    width: 50%;
+    margin: 2rem auto;
+  }
+}
+
+.ingredientForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $wheat;
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  border: none;
+}
+
+legend {
+  color: $bitterSweet;
+
+  span {
+    display: block;
+  }
+}
+
+.ingredientForm input {
+  width: 25px;
+}
+
+//-----.checkboxContainer-----//
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 150px;
+}
+
+.checkboxContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+
+  img {
+    width: 100%;
+  }
+}
+
+.checkboxContainer label:hover {
+  transform: scale(1.1);
+}

@@ -261,3 +261,151 @@ template {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+body {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.greetingContainer p:nth-of-type(2) {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+h1 {
+  font-family: "Cedarville Cursive", cursive;
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: 2.5px;
+}
+
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 50px;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 37px;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+legend {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 33px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+body {
+  background-color: #fff;
+}
+
+.mainWrapper {
+  max-width: 1650px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.greetingContainer {
+  padding-top: 3rem;
+  text-align: center;
+  color: #5ea241;
+}
+.greetingContainer img {
+  width: 450px;
+  margin-top: 1rem;
+}
+.greetingContainer p {
+  width: 50%;
+  margin: 2rem auto;
+}
+
+.ingredientForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f5deb3;
+}
+
+fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  border: none;
+}
+
+legend {
+  color: #f27059;
+}
+legend span {
+  display: block;
+}
+
+.ingredientForm input {
+  width: 25px;
+}
+
+label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  width: 150px;
+}
+
+.checkboxContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem;
+}
+.checkboxContainer img {
+  width: 100%;
+}
+
+.checkboxContainer label:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}

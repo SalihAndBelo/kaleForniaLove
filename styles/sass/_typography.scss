@@ -1,0 +1,44 @@
+// font-family: 'Cedarville Cursive', cursive;
+// font-family: 'Cormorant Garamond', serif;
+// font-family: 'Sofia', cursive;
+
+body {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.greetingContainer p:nth-of-type(2) {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+h1 {
+  font-family: "Cedarville Cursive", cursive;
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: 2.5px;
+}
+
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 50px;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 37px;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+legend {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 33px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
