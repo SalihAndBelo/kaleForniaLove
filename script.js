@@ -31,6 +31,7 @@ app.getRecipes = (userInput) => {
       return response.json();
     })
     .then((data) => {
+      document.querySelector('#saladCombo').innerHTML = '';
       console.log(data.hits);
       app.displaySelection(data.hits);
     });
@@ -39,7 +40,33 @@ app.getRecipes = (userInput) => {
 // Display salad selection to the page
 app.displaySelection = (saladRecipes) => {
   saladRecipes.forEach((salad) => {
-    console.log(salad);
+    const title = document.createElement('h3');
+    title.innerText = salad.recipe.label;
+    const cuisineTypeTitle = document.createElement('h4');
+    cuisineTypeTitle.innerText = "Cuisine Type";
+    const cuisineType = document.createElement('p');
+    cuisineType.innerText = salad.recipe.cuisineType[0]
+    const image = document.createElement('img');
+    image.src = salad.recipe.image;
+    image.alt = salad.recipe.label;
+    const recipeLink = document.createElement('a');
+    const recipeTitle = document.createElement('h5')
+    recipeTitle.innerText = "Below is the link to the full recipe:"
+    recipeLink.href = salad.recipe.url
+    recipeLink.innerText = "Click here"
+
+    const saladRecommendations = document.createElement('li');
+    saladRecommendations.classList.add('saladRecommendations')
+
+    saladRecommendations.appendChild(title);
+    saladRecommendations.appendChild(cuisineTypeTitle);
+    saladRecommendations.appendChild(cuisineType);
+    saladRecommendations.appendChild(image);
+    saladRecommendations.appendChild(recipeLink);
+    saladRecommendations.appendChild(recipeTitle);
+
+    document.querySelector('#saladCombo').appendChild(saladRecommendations);
+
   });
 };
 
