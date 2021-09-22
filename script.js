@@ -31,7 +31,8 @@ app.getRecipes = (userInput) => {
       return response.json();
     })
     .then((data) => {
-      document.querySelector("#saladCombo").innerHTML = "";
+      document.querySelector('#saladCombo').innerHTML = '';
+      console.log(data.hits);
       app.displaySelection(data.hits);
     });
 };
@@ -63,6 +64,10 @@ app.displaySelection = (saladRecipes) => {
     document.querySelector("#saladCombo").appendChild(saladRecommendations);
   });
 };
+
+// Create a condition where only one selection can be made for the "greens" category
+
+
 
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
