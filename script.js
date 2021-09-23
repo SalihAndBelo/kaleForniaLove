@@ -34,35 +34,38 @@ app.getRecipes = (userInput) => {
       document.querySelector("#saladCombo").innerHTML = "";
       console.log(data.hits);
       app.displaySelection(data.hits);
+      app.errorMessage= (data.hits)
     });
 };
 
 // Display salad selection to the page
 app.displaySelection = (saladRecipes) => {
-  saladRecipes.forEach((salad) => {
-    const title = document.createElement("h2");
-    title.innerText = salad.recipe.label;
-
-    const cuisineType = document.createElement("h3");
-    cuisineType.innerHTML = `Cuisine Type: <span>${salad.recipe.cuisineType[0]}</span>`;
-
-    const image = document.createElement("img");
-    image.src = salad.recipe.image;
-    image.alt = salad.recipe.label;
-
-    const recipeLink = document.createElement("p");
-    recipeLink.innerHTML = `<a href="${salad.recipe.url}">Click here to try this delicious recipe!</a>
+  if (saladRecipes.length > 0) {
+    saladRecipes.forEach((salad) => {
+      const title = document.createElement("h2");
+      title.innerText = salad.recipe.label;
+      const cuisineType = document.createElement("h3");
+      cuisineType.innerHTML = `Cuisine Type: <span>${salad.recipe.cuisineType[0]}</span>`;
+      const image = document.createElement("img");
+      image.src = salad.recipe.image;
+      image.alt = salad.recipe.label;
+      const recipeLink = document.createElement("p");
+      recipeLink.innerHTML = `<a href="${salad.recipe.url}">Click here to try this delicious recipe!</a>
 `;
-
-    const saladRecommendations = document.createElement("div");
-
-    saladRecommendations.appendChild(title);
-    saladRecommendations.appendChild(cuisineType);
-    saladRecommendations.appendChild(image);
-    saladRecommendations.appendChild(recipeLink);
-
-    document.querySelector("#saladCombo").appendChild(saladRecommendations);
-  });
+      const saladRecommendations = document.createElement("div");
+      saladRecommendations.append(title);
+      saladRecommendations.append(cuisineType);
+      saladRecommendations.append(image);
+      saladRecommendations.append(recipeLink);
+      document.querySelector("#saladCombo").append(saladRecommendations);
+    });
+  }
+  // Error handler -> if there are no results, display error message on the page
+  else {
+    const imgDiv = document.createElement("div");
+    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/background-img.png"></div>`;
+    document.querySelector("#saladCombo").append(imgDiv);
+  }
 };
 
 // Toggle label colors on click to notify the user a selection has been made
