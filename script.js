@@ -31,7 +31,7 @@ app.getRecipes = (userInput) => {
       return response.json();
     })
     .then((data) => {
-      document.querySelector('#saladCombo').innerHTML = '';
+      document.querySelector("#saladCombo").innerHTML = "";
       console.log(data.hits);
       app.displaySelection(data.hits);
     });
@@ -65,11 +65,6 @@ app.displaySelection = (saladRecipes) => {
   });
 };
 
-<<<<<<< HEAD
-// Create a condition where only one selection can be made for the "greens" category
-
-
-=======
 // Toggle label colors on click to notify the user a selection has been made
 app.changeLabelColor = () => {
   app.labels = document.querySelectorAll("label");
@@ -79,7 +74,6 @@ app.changeLabelColor = () => {
     });
   });
 };
->>>>>>> m-feature-branch
 
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
