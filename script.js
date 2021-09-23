@@ -3,14 +3,14 @@
 
 // Record user ingredient selection(s) and store them in a variable.
 // Based on the user selection, pull a random salad recipe from API call which matches some or all of the selected ingredients.
-//    - Display the salad title, image, recipe and link to the recipe on the page.
+//    - Display the salad title, image, and link to the recipe on the page.
 // Add error handling if a user does not select anything from ingredient list or if there are not matching recipes based on user selection.
 // Add a reset function which will clear the page and allow the user to select new ingredients.
 
 // Namespace object
 const app = {};
 
-// Namespace object properties;
+// Namespace object properties
 app.apiUrl = "https://api.edamam.com/api/recipes/v2";
 app.appKey = "b6093d9d19dda2ef504a3b36f99113b1";
 app.appId = "560f8d94";
@@ -64,6 +64,16 @@ app.displaySelection = (saladRecipes) => {
   });
 };
 
+// Toggle label colors on click to notify the user a selection has been made
+app.changeLabelColor = () => {
+  app.labels = document.querySelectorAll("label");
+  app.labels.forEach((label) => {
+    label.addEventListener(`click`, function () {
+      label.classList.toggle("labelColor");
+    });
+  });
+};
+
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
   app.ingredientForm.addEventListener("submit", function (e) {
@@ -91,6 +101,7 @@ app.userSelection = () => {
 app.init = () => {
   app.ingredientForm = document.querySelector("form");
   app.userSelection();
+  app.changeLabelColor();
 };
 
 // Initialized our init method

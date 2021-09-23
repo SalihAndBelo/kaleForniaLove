@@ -296,11 +296,21 @@ h3 {
   letter-spacing: 2px;
 }
 
+form {
+  font-size: 23px;
+}
+
 legend {
   font-family: "Cormorant Garamond", serif;
   font-size: 33px;
   font-weight: bolder;
   letter-spacing: 2px;
+}
+
+.tossItUp {
+  font-family: "Comic Neue", cursive;
+  font-size: 50px;
+  letter-spacing: 4px;
 }
 
 body {
@@ -319,13 +329,20 @@ h3 {
 }
 
 .greetingContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding-top: 3rem;
   text-align: center;
   color: #5ea241;
 }
 .greetingContainer img {
-  width: 450px;
-  margin-top: 1rem;
+  width: 60%;
+  margin: 1rem auto;
 }
 .greetingContainer p {
   width: 50%;
@@ -357,17 +374,19 @@ fieldset {
           justify-content: center;
   width: 100%;
   border: none;
+  margin-bottom: 2rem;
 }
 
 legend {
   color: #f27059;
-}
-legend span {
-  display: block;
+  background: #b0e3a7;
+  height: 35px;
+  border-radius: 6px;
 }
 
 .ingredientForm input {
-  width: 25px;
+  position: absolute;
+  opacity: 0;
 }
 
 label {
@@ -386,6 +405,7 @@ label {
           justify-content: center;
   cursor: pointer;
   width: 150px;
+  text-align: center;
 }
 
 .checkboxContainer {
@@ -408,4 +428,68 @@ label {
 .checkboxContainer label:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.labelColor {
+  background: #f8ad9d;
+  border-radius: 30px;
+}
+
+.tossItUp {
+  width: 350px;
+  height: 80px;
+  background: #f27059;
+  border-radius: 20px;
+  border: none;
+  color: #ffe402;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.tossItUp:hover {
+  -webkit-animation: shakeItUp 0.82s cubic-bezier(0.4, 0.1, 0.25, 0.99) both;
+          animation: shakeItUp 0.82s cubic-bezier(0.4, 0.1, 0.25, 0.99) both;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  background: #fd8e01;
+}
+
+@-webkit-keyframes shakeItUp {
+  10%, 90% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  20%, 80% {
+    -webkit-transform: translate3d(5px, 0, 0);
+            transform: translate3d(5px, 0, 0);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+            transform: translate3d(-5px, 0, 0);
+  }
+  40%, 60% {
+    -webkit-transform: translate3d(10px, 0, 0);
+            transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes shakeItUp {
+  10%, 90% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  20%, 80% {
+    -webkit-transform: translate3d(5px, 0, 0);
+            transform: translate3d(5px, 0, 0);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+            transform: translate3d(-5px, 0, 0);
+  }
+  40%, 60% {
+    -webkit-transform: translate3d(10px, 0, 0);
+            transform: translate3d(10px, 0, 0);
+  }
 }
