@@ -1,6 +1,6 @@
-// font-family: 'Cedarville Cursive', cursive;
-// font-family: 'Cormorant Garamond', serif;
-// font-family: 'Sofia', cursive;
+// font-family: "Cedarville Cursive", cursive;
+// font-family: "Comic Neue", cursive;
+// font-family: "Cormorant Garamond", serif;
 
 body {
   font-family: "Cormorant Garamond", serif;
@@ -36,9 +36,19 @@ h3 {
   letter-spacing: 2px;
 }
 
+form {
+  font-size: 23px;
+}
+
 legend {
   font-family: "Cormorant Garamond", serif;
   font-size: 33px;
   font-weight: bolder;
   letter-spacing: 2px;
+}
+
+.tossItUp {
+  font-family: "Comic Neue", cursive;
+  font-size: 50px;
+  letter-spacing: 4px;
 }

@@ -5,13 +5,15 @@
 
 //-----Header-----//
 .greetingContainer {
+  display: flex;
+  flex-direction: column;
   padding-top: 3rem;
   text-align: center;
   color: $grassGreen;
 
   img {
-    width: 450px;
-    margin-top: 1rem;
+    width: 60%;
+    margin: 1rem auto;
   }
 
   p {
@@ -20,6 +22,7 @@
   }
 }
 
+//-----.ingrdientSelection-----//
 .ingredientForm {
   display: flex;
   flex-direction: column;
@@ -33,21 +36,21 @@ fieldset {
   justify-content: center;
   width: 100%;
   border: none;
+  margin-bottom: 2rem;
 }
 
 legend {
   color: $bitterSweet;
-
-  span {
-    display: block;
-  }
+  background: $meadowGreen;
+  height: 35px;
+  border-radius: 6px;
 }
 
 .ingredientForm input {
-  width: 25px;
+  position: absolute;
+  opacity: 0;
 }
 
-//-----.checkboxContainer-----//
 label {
   display: flex;
   flex-direction: column;
@@ -55,6 +58,7 @@ label {
   justify-content: center;
   cursor: pointer;
   width: 150px;
+  text-align: center;
 }
 
 .checkboxContainer {
@@ -70,4 +74,47 @@ label {
 
 .checkboxContainer label:hover {
   transform: scale(1.1);
+}
+
+.labelColor {
+  background: $melon;
+  border-radius: 30px;
+}
+
+.tossItUp {
+  width: 350px;
+  height: 80px;
+  background: $bitterSweet;
+  border-radius: 20px;
+  border: none;
+  color: $napoliYellow;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.tossItUp:hover {
+  animation: shakeItUp 0.82s cubic-bezier(0.4, 0.1, 0.25, 0.99) both;
+  perspective: 1000px;
+  background: $darkOrange;
+}
+
+@keyframes shakeItUp {
+  10%,
+  90% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(5px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-5px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(10px, 0, 0);
+  }
 }
