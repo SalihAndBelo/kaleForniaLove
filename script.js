@@ -61,7 +61,6 @@ app.displaySelection = (saladRecipes) => {
       saladRecommendations.append(cuisineType);
       saladRecommendations.append(image);
       saladRecommendations.append(recipeLink);
-
       document.querySelector("#saladCombo").append(saladRecommendations);
     });
   }
@@ -82,17 +81,6 @@ app.displaySelection = (saladRecipes) => {
       });
     });
   };
-};
-
-// Toggle label colors on click to notify the user a selection has been made
-app.changeLabelColor = () => {
-  app.labels = document.querySelectorAll("label");
-  app.labels.forEach((label) => {
-    label.addEventListener(`click`, function () {
-      label.classList.toggle("labelColor");
-    });
-  });
-};
 
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
