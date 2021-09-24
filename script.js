@@ -31,9 +31,13 @@ app.getRecipes = (userInput) => {
       return response.json();
     })
     .then((data) => {
+      // Error handler -> if user does not select any ingredients
       document.querySelector("#saladCombo").innerHTML = "";
-      console.log(data.hits);
-      app.displaySelection(data.hits);
+      if (userInput === "") {
+        alert("Please select some ingredients!");
+      } else {
+        app.displaySelection(data.hits);
+      }
     });
 };
 
@@ -68,7 +72,7 @@ app.displaySelection = (saladRecipes) => {
   // Error handler -> if there are no results, display error message on the page
   else {
     const imgDiv = document.createElement("div");
-    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/error.png"></div>`;
+    imgDiv.innerHTML = `<div class ="errorImage"><img src="./assets/error.png" alt="A handsome devil named Safi"></div>`;
 
     document.querySelector("#saladCombo").append(imgDiv);
   }

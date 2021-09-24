@@ -341,7 +341,7 @@ h3 {
   color: #5ea241;
 }
 .greetingContainer img {
-  width: 60%;
+  width: 20%;
   margin: 1rem auto 0 auto;
 }
 .greetingContainer p {
@@ -363,7 +363,8 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #f5deb3;
+  background: #ffe5d9;
+  padding: 1rem 0;
 }
 
 fieldset {
@@ -392,7 +393,20 @@ legend {
   opacity: 0;
 }
 
-label {
+.checkboxContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem;
+}
+.checkboxContainer label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -410,20 +424,6 @@ label {
   width: 150px;
   text-align: center;
   z-index: 20;
-}
-
-.checkboxContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 1rem;
 }
 .checkboxContainer img {
   width: 100%;
@@ -503,4 +503,20 @@ label {
 .errorImage img {
   width: 40%;
   margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  background: #5ea241;
+  color: #ffffff;
+  line-height: initial;
+}
+footer a {
+  text-decoration: none;
+  color: #ffffff;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+footer a:hover, footer a:focus {
+  color: #fd8e01;
 }
