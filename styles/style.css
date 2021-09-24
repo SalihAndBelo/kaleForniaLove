@@ -336,17 +336,20 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 3rem;
+  padding-top: 2rem;
   text-align: center;
   color: #5ea241;
 }
 .greetingContainer img {
   width: 60%;
-  margin: 1rem auto;
+  margin: 1rem auto 0 auto;
 }
 .greetingContainer p {
   width: 50%;
-  margin: 2rem auto;
+  margin: 0.5rem auto;
+}
+.greetingContainer p:nth-of-type(2) {
+  margin-bottom: 2rem;
 }
 
 .ingredientForm {
@@ -379,9 +382,9 @@ fieldset {
 
 legend {
   color: #f27059;
-  background: #b0e3a7;
   height: 35px;
   border-radius: 6px;
+  margin-bottom: 1rem;
 }
 
 .ingredientForm input {
@@ -406,6 +409,7 @@ label {
   cursor: pointer;
   width: 150px;
   text-align: center;
+  z-index: 20;
 }
 
 .checkboxContainer {
@@ -449,10 +453,8 @@ label {
 }
 
 .tossItUp:hover {
-  -webkit-animation: shakeItUp 0.82s cubic-bezier(0.4, 0.1, 0.25, 0.99) both;
-          animation: shakeItUp 0.82s cubic-bezier(0.4, 0.1, 0.25, 0.99) both;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
+  -webkit-animation: shakeItUp 1s cubic-bezier(0, 1.5, 1, 1.5) both;
+          animation: shakeItUp 1s cubic-bezier(0, 1.5, 1, 1.5) both;
   background: #fd8e01;
 }
 
@@ -492,4 +494,13 @@ label {
     -webkit-transform: translate3d(10px, 0, 0);
             transform: translate3d(10px, 0, 0);
   }
+}
+.errorImage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.errorImage img {
+  width: 40%;
+  margin: 0 auto;
 }

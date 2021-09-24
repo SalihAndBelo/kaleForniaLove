@@ -7,18 +7,22 @@
 .greetingContainer {
   display: flex;
   flex-direction: column;
-  padding-top: 3rem;
+  padding-top: 2rem;
   text-align: center;
   color: $grassGreen;
 
   img {
     width: 60%;
-    margin: 1rem auto;
+    margin: 1rem auto 0 auto;
   }
 
   p {
     width: 50%;
-    margin: 2rem auto;
+    margin: 0.5rem auto;
+  }
+
+  p:nth-of-type(2) {
+    margin-bottom: 2rem;
   }
 }
 
@@ -41,9 +45,9 @@ fieldset {
 
 legend {
   color: $bitterSweet;
-  background: $meadowGreen;
   height: 35px;
   border-radius: 6px;
+  margin-bottom: 1rem;
 }
 
 .ingredientForm input {
@@ -59,6 +63,7 @@ label {
   cursor: pointer;
   width: 150px;
   text-align: center;
+  z-index: 20;
 }
 
 .checkboxContainer {
@@ -94,8 +99,7 @@ label {
 }
 
 .tossItUp:hover {
-  animation: shakeItUp 0.82s cubic-bezier(0.4, 0.1, 0.25, 0.99) both;
-  perspective: 1000px;
+  animation: shakeItUp 1s cubic-bezier(0, 1.5, 1, 1.5) both;
   background: $darkOrange;
 }
 
@@ -116,5 +120,15 @@ label {
   40%,
   60% {
     transform: translate3d(10px, 0, 0);
+  }
+}
+
+//-----#saladCombo-----//
+.errorImage {
+  display: flex;
+
+  img {
+    width: 40%;
+    margin: 0 auto;
   }
 }
