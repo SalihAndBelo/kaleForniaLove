@@ -34,7 +34,6 @@ app.getRecipes = (userInput) => {
       document.querySelector("#saladCombo").innerHTML = "";
       console.log(data.hits);
       app.displaySelection(data.hits);
-      app.errorMessage= (data.hits)
     });
 };
 
