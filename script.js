@@ -10,7 +10,7 @@
 // Namespace object
 const app = {};
 
-// Namespace object properties
+// Namespace variables
 app.apiUrl = "https://api.edamam.com/api/recipes/v2";
 app.appKey = "b6093d9d19dda2ef504a3b36f99113b1";
 app.appId = "560f8d94";
@@ -43,15 +43,20 @@ app.displaySelection = (saladRecipes) => {
     saladRecipes.forEach((salad) => {
       const title = document.createElement("h2");
       title.innerText = salad.recipe.label;
+
       const cuisineType = document.createElement("h3");
       cuisineType.innerHTML = `Cuisine Type: <span>${salad.recipe.cuisineType[0]}</span>`;
+
       const image = document.createElement("img");
       image.src = salad.recipe.image;
       image.alt = salad.recipe.label;
+
       const recipeLink = document.createElement("p");
       recipeLink.innerHTML = `<a href="${salad.recipe.url}">Click here to try this delicious recipe!</a>
 `;
+
       const saladRecommendations = document.createElement("div");
+
       saladRecommendations.append(title);
       saladRecommendations.append(cuisineType);
       saladRecommendations.append(image);
@@ -62,20 +67,20 @@ app.displaySelection = (saladRecipes) => {
   // Error handler -> if there are no results, display error message on the page
   else {
     const imgDiv = document.createElement("div");
-    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/background-img.png"></div>`;
+    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/error.png"></div>`;
+
     document.querySelector("#saladCombo").append(imgDiv);
   }
-};
 
-// Toggle label colors on click to notify the user a selection has been made
-app.changeLabelColor = () => {
-  app.labels = document.querySelectorAll("label");
-  app.labels.forEach((label) => {
-    label.addEventListener(`click`, function () {
-      label.classList.toggle("labelColor");
+  // Toggle label colors on click to notify the user a selection has been made
+  app.changeLabelColor = () => {
+    app.labels = document.querySelectorAll("label");
+    app.labels.forEach((label) => {
+      label.addEventListener(`click`, function () {
+        label.classList.toggle("labelColor");
+      });
     });
-  });
-};
+  };
 
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
@@ -103,6 +108,7 @@ app.userSelection = () => {
 // Added our init method and passed all functions that need to be called inside of it
 app.init = () => {
   app.ingredientForm = document.querySelector("form");
+  app.ingredientForm.reset();
   app.userSelection();
   app.changeLabelColor();
 };
