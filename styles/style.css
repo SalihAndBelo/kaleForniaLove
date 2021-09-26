@@ -634,6 +634,10 @@ footer a:hover, footer a:focus {
 }
 
 @media (max-width: 775px) {
+  legend {
+    margin-bottom: 2rem;
+  }
+
   h1 {
     font-size: 70px;
   }
