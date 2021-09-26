@@ -32,6 +32,7 @@ app.getRecipes = (userInput) => {
     })
     .then((data) => {
       document.querySelector("#saladCombo").innerHTML = "";
+      document.querySelector("#errorMessage").innerHTML = "";
       console.log(data.hits);
       app.displaySelection(data.hits);
     });
@@ -39,7 +40,7 @@ app.getRecipes = (userInput) => {
 
 // Display salad selection to the page
 app.displaySelection = (saladRecipes) => {
-  if (saladRecipes.length >= 1) {
+  if (saladRecipes.length > 0) {
     saladRecipes.forEach((salad) => {
       const title = document.createElement("h2");
       title.innerText = salad.recipe.label;
@@ -56,6 +57,7 @@ app.displaySelection = (saladRecipes) => {
 `;
 
       const saladRecommendations = document.createElement("div");
+      saladRecommendations.classList.add("recipeResults")
       const resultImageDiv = document.createElement("div");
       
 
@@ -64,21 +66,28 @@ app.displaySelection = (saladRecipes) => {
       saladRecommendations.append(resultImageDiv);
       saladRecommendations.append(recipeLink);
       resultImageDiv.append(image);
-      document.querySelector("#saladCombo").append(saladRecommendations);
+
+      const saladResults = document.querySelector("#saladCombo")
+      saladResults.classList.add("saladCombo")
+      saladResults.append(saladRecommendations);
     });
   }
   // Error handler -> if there are no results, display error message on the page
   else {
-    const imgDiv = document.createElement("div");
-    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/safi-error.png"></div>`;
+    const saladResults = document.querySelector("#saladCombo")
+    saladResults.classList.remove("saladCombo")
 
-    document.querySelector("#errorMessage").append(imgDiv);
+    const imgDiv = document.createElement("div");
+    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/chef.jpg" alt="Handsome devil named Safi"></div>`;
 
     const errorParagraph = document.createElement("p");
-    errorParagraph.innerHTML = `Chef de partie Safi doesn't approve of this! Please reselect a different set of options from the above and try again.`
-    document.querySelector("#errorMessage").append(errorParagraph);
-    app.displayError.hidden= false;
-    app.displaySection.hidden=true;
+    errorParagraph.classList.add("errorMessage");
+    errorParagraph.innerHTML = `Chef de Partie doesn't approve of this! Please select a different set of ingredients from above and try again.`
+
+
+    imgDiv.append(errorParagraph);
+
+    saladResults.append(imgDiv);
   }
 }
 
@@ -92,20 +101,11 @@ app.displaySelection = (saladRecipes) => {
     });
   };
 
-  //Display hidden for the result and error sections
-app.displaySection = document.querySelector("#saladCombo")
-app.displaySection.hidden = true;
-app.displayError = document.querySelector("#errorMessage")
-app.displayError.hidden= true;
-
 
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
   app.ingredientForm.addEventListener("submit", function (e) {
     e.preventDefault();
-
-    //Display section after click
-    app.displaySection.hidden = false;
 
     // Select all the checked checkboxes
     const ingredients = document.querySelectorAll(

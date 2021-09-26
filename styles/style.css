@@ -496,7 +496,7 @@ label {
             transform: translate3d(10px, 0, 0);
   }
 }
-#saladCombo {
+.saladCombo {
   background-color: #f27059;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -512,7 +512,7 @@ label {
   margin: 0 auto;
 }
 
-#saladCombo div {
+.recipeResults {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -531,34 +531,38 @@ label {
   text-align: center;
   width: 50%;
 }
-
-#saladCombo div a {
+.recipeResults a {
   text-decoration: none;
-  color: #ffe402;
+  color: #fd8e01;
   border-bottom: 1px solid white;
   margin-top: 3rem;
   margin-bottom: 3rem;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.recipeResults:hover, .recipeResults:focus {
+  color: white;
 }
 
-#saladCombo div h2 {
+.recipeResults h2 {
   margin-top: 2rem;
   padding-right: 2rem;
   padding-left: 2rem;
   text-transform: capitalize;
 }
 
-#saladCombo div h3 {
+.recipeResults h3 {
   margin-top: 1rem;
   text-transform: capitalize;
 }
 
-#saladCombo div div {
+.recipeResults div {
   margin: 2rem auto;
   -webkit-box-shadow: 16px 17px 0px 6px #FFE402;
   box-shadow: 16px 17px 0px 6px #FFE402;
 }
 
-#saladCombo div p {
+.recipeResults p {
   margin-top: 2rem;
   margin-bottom: 3rem;
   padding-right: 1rem;
@@ -566,12 +570,23 @@ label {
 }
 
 .errorImage {
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.errorImage img {
+  width: 50%;
+  margin: 0 auto;
 }
 
-#errorMessage p {
+.errorMessage {
   text-align: center;
-  color: #fd8e01;
+  color: white;
+  width: 70%;
+  margin: 2rem auto;
+  background-color: #5ea241;
+  border-radius: 50px;
+  padding: 1rem 0px 1rem 0px;
 }
 
 footer {
