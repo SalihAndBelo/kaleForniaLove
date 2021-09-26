@@ -90,7 +90,7 @@ legend {
 
 .tossItUp {
   width: 350px;
-  height: 80px;
+  height: 100px;
   background: $bitterSweet;
   border-radius: 20px;
   border: none;
@@ -189,7 +189,7 @@ legend {
   display: flex;
 
   img {
-    width: 50%;
+    width: 65%;
     margin: 0 auto;
     animation: pop 2s 1s linear;
   }
@@ -233,5 +233,32 @@ footer {
     &:focus {
       color: $darkOrange;
     }
+  }
+}
+
+//-----Media Queries-----//
+@media (max-width: 600px) {
+  h1 {
+    font-size: 70px;
+  }
+
+  .greetingContainer img {
+    width: 40%;
+  }
+
+  .checkboxContainer label {
+    width: 100px;
+  }
+
+  .recipeResults {
+    width: 100%;
+  }
+
+  .errorImage img {
+    width: 100%;
+  }
+
+  .errorMessage {
+    width: 80%;
   }
 }
