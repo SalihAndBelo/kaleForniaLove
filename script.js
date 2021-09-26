@@ -72,6 +72,7 @@ app.displaySelection = (saladRecipes) => {
 
       app.saladResults.classList.add("saladCombo");
       app.saladResults.append(saladRecommendations);
+      app.saladResults.scrollIntoView();
     });
   }
   // Error handler -> if there are no results, display error message on the page
@@ -88,6 +89,7 @@ app.displaySelection = (saladRecipes) => {
     imgDiv.append(errorParagraph);
 
     app.saladResults.append(imgDiv);
+    app.saladResults.scrollIntoView();
   }
 };
 

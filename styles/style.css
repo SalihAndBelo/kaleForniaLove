@@ -320,6 +320,11 @@ legend {
   font-weight: bold;
 }
 
+footer a,
+footer p {
+  font-size: 1.25rem;
+}
+
 body {
   background-color: #fff;
 }
@@ -614,7 +619,6 @@ footer {
 }
 footer p {
   margin: 0;
-  font-size: 1.25rem;
 }
 footer p:nth-of-type(1) {
   margin-bottom: 0.5rem;
@@ -624,7 +628,6 @@ footer a {
   color: #ffffff;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
-  font-size: 1.25rem;
 }
 footer a:hover, footer a:focus {
   color: #fd8e01;

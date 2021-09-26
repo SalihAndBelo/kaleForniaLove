@@ -225,10 +225,9 @@ footer {
 
   p {
     margin: 0;
-    font-size: 1.25rem;
   }
 
-  p:nth-of-type(1){
+  p:nth-of-type(1) {
     margin-bottom: 0.5rem;
   }
 
@@ -236,7 +235,6 @@ footer {
     text-decoration: none;
     color: #ffffff;
     transition: color 0.3s ease;
-    font-size: 1.25rem;
 
     &:hover,
     &:focus {
