@@ -32,6 +32,7 @@ app.getRecipes = (userInput) => {
     })
     .then((data) => {
       document.querySelector("#saladCombo").innerHTML = "";
+      document.querySelector("#errorMessage").innerHTML = "";
       console.log(data.hits);
       app.displaySelection(data.hits);
     });
@@ -56,21 +57,39 @@ app.displaySelection = (saladRecipes) => {
 `;
 
       const saladRecommendations = document.createElement("div");
+      saladRecommendations.classList.add("recipeResults")
+      const resultImageDiv = document.createElement("div");
+      
 
       saladRecommendations.append(title);
       saladRecommendations.append(cuisineType);
-      saladRecommendations.append(image);
+      saladRecommendations.append(resultImageDiv);
       saladRecommendations.append(recipeLink);
-      document.querySelector("#saladCombo").append(saladRecommendations);
+      resultImageDiv.append(image);
+
+      const saladResults = document.querySelector("#saladCombo")
+      saladResults.classList.add("saladCombo")
+      saladResults.append(saladRecommendations);
     });
   }
   // Error handler -> if there are no results, display error message on the page
   else {
-    const imgDiv = document.createElement("div");
-    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/error.png"></div>`;
+    const saladResults = document.querySelector("#saladCombo")
+    saladResults.classList.remove("saladCombo")
 
-    document.querySelector("#saladCombo").append(imgDiv);
+    const imgDiv = document.createElement("div");
+    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/chef.jpg" alt="Handsome devil named Safi"></div>`;
+
+    const errorParagraph = document.createElement("p");
+    errorParagraph.classList.add("errorMessage");
+    errorParagraph.innerHTML = `Chef de Partie doesn't approve of this! Please select a different set of ingredients from above and try again.`
+
+
+    imgDiv.append(errorParagraph);
+
+    saladResults.append(imgDiv);
   }
+}
 
   // Toggle label colors on click to notify the user a selection has been made
   app.changeLabelColor = () => {
@@ -81,6 +100,7 @@ app.displaySelection = (saladRecipes) => {
       });
     });
   };
+
 
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
