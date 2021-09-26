@@ -11,18 +11,13 @@
   text-align: center;
   color: $grassGreen;
 
-  img {
-    width: 60%;
-    margin: 1rem auto 0 auto;
-  }
-
   p {
     width: 50%;
     margin: 0.5rem auto;
   }
 
   p:nth-of-type(2) {
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
   }
 }
 
@@ -41,6 +36,10 @@ fieldset {
   width: 100%;
   border: none;
   margin-bottom: 2rem;
+}
+
+.greens {
+  margin-top: 3rem;
 }
 
 legend {
@@ -96,6 +95,7 @@ label {
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
+  margin-bottom: 3rem;
 }
 
 .tossItUp:hover {
@@ -124,6 +124,12 @@ label {
 }
 
 //-----#saladCombo-----//
+#saladCombo {
+  background-color: #f27059;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .errorImage {
   display: flex;
 
@@ -131,4 +137,77 @@ label {
     width: 40%;
     margin: 0 auto;
   }
+}
+
+#saladCombo div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: $meadowGreen;
+  color: $darkOrange;
+  margin: 4rem auto;
+  text-align: center;
+  width: 50%;
+}
+
+#saladCombo div a {
+  text-decoration: none;
+  color: $napoliYellow;
+  border-bottom: 1px solid white;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+#saladCombo div h2 {
+  margin-top: 2rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  text-transform: capitalize;
+}
+
+#saladCombo div h3 {
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+
+#saladCombo div div {
+  margin: 2rem auto;
+  -webkit-box-shadow: 16px 17px 0px 6px #FFE402; 
+  box-shadow: 16px 17px 0px 6px #FFE402;
+}
+
+#saladCombo div p {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.errorImage {
+  width: 100%;
+}
+
+#errorMessage p {
+  text-align: center;
+  color: $darkOrange;
+}
+
+//footer
+
+footer {
+  background-color: $grassGreen;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer p {
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.25rem;
 }

@@ -39,7 +39,7 @@ app.getRecipes = (userInput) => {
 
 // Display salad selection to the page
 app.displaySelection = (saladRecipes) => {
-  if (saladRecipes.length > 0) {
+  if (saladRecipes.length >= 1) {
     saladRecipes.forEach((salad) => {
       const title = document.createElement("h2");
       title.innerText = salad.recipe.label;
@@ -56,21 +56,31 @@ app.displaySelection = (saladRecipes) => {
 `;
 
       const saladRecommendations = document.createElement("div");
+      const resultImageDiv = document.createElement("div");
+      
 
       saladRecommendations.append(title);
       saladRecommendations.append(cuisineType);
-      saladRecommendations.append(image);
+      saladRecommendations.append(resultImageDiv);
       saladRecommendations.append(recipeLink);
+      resultImageDiv.append(image);
       document.querySelector("#saladCombo").append(saladRecommendations);
     });
   }
   // Error handler -> if there are no results, display error message on the page
   else {
     const imgDiv = document.createElement("div");
-    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/error.png"></div>`;
+    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/safi-error.png"></div>`;
 
-    document.querySelector("#saladCombo").append(imgDiv);
+    document.querySelector("#errorMessage").append(imgDiv);
+
+    const errorParagraph = document.createElement("p");
+    errorParagraph.innerHTML = `Chef de partie Safi doesn't approve of this! Please reselect a different set of options from the above and try again.`
+    document.querySelector("#errorMessage").append(errorParagraph);
+    app.displayError.hidden= false;
+    app.displaySection.hidden=true;
   }
+}
 
   // Toggle label colors on click to notify the user a selection has been made
   app.changeLabelColor = () => {
@@ -82,10 +92,20 @@ app.displaySelection = (saladRecipes) => {
     });
   };
 
+  //Display hidden for the result and error sections
+app.displaySection = document.querySelector("#saladCombo")
+app.displaySection.hidden = true;
+app.displayError = document.querySelector("#errorMessage")
+app.displayError.hidden= true;
+
+
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
   app.ingredientForm.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    //Display section after click
+    app.displaySection.hidden = false;
 
     // Select all the checked checkboxes
     const ingredients = document.querySelectorAll(
