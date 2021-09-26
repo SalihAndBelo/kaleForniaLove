@@ -340,16 +340,12 @@ h3 {
   text-align: center;
   color: #5ea241;
 }
-.greetingContainer img {
-  width: 60%;
-  margin: 1rem auto 0 auto;
-}
 .greetingContainer p {
   width: 50%;
   margin: 0.5rem auto;
 }
 .greetingContainer p:nth-of-type(2) {
-  margin-bottom: 2rem;
+  margin-bottom: 3.5rem;
 }
 
 .ingredientForm {
@@ -378,6 +374,10 @@ fieldset {
   width: 100%;
   border: none;
   margin-bottom: 2rem;
+}
+
+.greens {
+  margin-top: 3rem;
 }
 
 legend {
@@ -450,6 +450,7 @@ label {
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
+  margin-bottom: 3rem;
 }
 
 .tossItUp:hover {
@@ -495,6 +496,11 @@ label {
             transform: translate3d(10px, 0, 0);
   }
 }
+.saladCombo {
+  background-color: #f27059;
+  padding: 2rem 0;
+}
+
 .errorImage {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -503,4 +509,98 @@ label {
 .errorImage img {
   width: 40%;
   margin: 0 auto;
+}
+
+.recipeResults {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: #b0e3a7;
+  color: #fd8e01;
+  margin: 4rem auto;
+  text-align: center;
+  width: 50%;
+}
+.recipeResults h2 {
+  margin-top: 2rem;
+  padding: 0 2rem;
+  text-transform: capitalize;
+}
+.recipeResults h3 {
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+
+.recipeResults a {
+  text-decoration: none;
+  color: #fd8e01;
+  border-bottom: 1px solid white;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.recipeResults a:hover, .recipeResults a:focus {
+  color: white;
+}
+
+.recipeResults div {
+  margin: 2rem auto;
+}
+.recipeResults div img {
+  -webkit-box-shadow: 16px 17px 0px 6px #ffe402;
+  box-shadow: 16px 17px 0px 6px #ffe402;
+}
+
+.recipeResults p {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.errorImage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.errorImage img {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.errorMessage {
+  text-align: center;
+  color: white;
+  width: 70%;
+  margin: 2rem auto;
+  background-color: #5ea241;
+  border-radius: 50px;
+  padding: 1rem 0px 1rem 0px;
+}
+
+footer {
+  background-color: #5ea241;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer p {
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.25rem;
 }
