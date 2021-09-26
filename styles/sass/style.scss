@@ -53,7 +53,7 @@ legend {
 
 .ingredientForm input {
   position: absolute;
-  opacity: 0;
+  opacity: 1;
 }
 
 .checkboxContainer {
@@ -70,7 +70,7 @@ legend {
     cursor: pointer;
     width: 150px;
     text-align: center;
-    z-index: 20;
+    z-index: 30;
   }
 
   img {
@@ -131,6 +131,24 @@ legend {
   img {
     width: 40%;
     margin: 0 auto;
+    animation: pop 2s 1s linear;
+  }
+}
+
+.errorMessage {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  color: #fff;
+  background: $grassGreen;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  animation: pop 2s 1s linear;
+}
+
+@keyframes pop {
+  50% {
+    transform: scale(1.25);
   }
 }
 

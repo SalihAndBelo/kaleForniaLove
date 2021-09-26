@@ -313,6 +313,13 @@ legend {
   letter-spacing: 4px;
 }
 
+.errorMessage {
+  font-family: "Comic Neue", cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
 body {
   background-color: #fff;
 }
@@ -390,7 +397,7 @@ legend {
 
 .ingredientForm input {
   position: absolute;
-  opacity: 0;
+  opacity: 1;
 }
 
 .checkboxContainer {
@@ -423,7 +430,7 @@ legend {
   cursor: pointer;
   width: 150px;
   text-align: center;
-  z-index: 20;
+  z-index: 30;
 }
 .checkboxContainer img {
   width: 100%;
@@ -503,8 +510,35 @@ legend {
 .errorImage img {
   width: 40%;
   margin: 0 auto;
+  -webkit-animation: pop 2s 1s linear;
+          animation: pop 2s 1s linear;
 }
 
+.errorMessage {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  color: #fff;
+  background: #5ea241;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  -webkit-animation: pop 2s 1s linear;
+          animation: pop 2s 1s linear;
+}
+
+@-webkit-keyframes pop {
+  50% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+}
+
+@keyframes pop {
+  50% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+}
 footer {
   text-align: center;
   background: #5ea241;

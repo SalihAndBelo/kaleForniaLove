@@ -72,20 +72,19 @@ app.displaySelection = (saladRecipes) => {
   // Error handler -> if there are no results, display error message on the page
   else {
     const imgDiv = document.createElement("div");
-    imgDiv.innerHTML = `<div class ="errorImage"><img src="./assets/error.png" alt="A handsome devil named Safi"></div>`;
+    imgDiv.innerHTML = `
+    <div class ="errorImage">
+    <img src="./assets/error.png" alt="A handsome devil named Safi">
+    </div>`;
+
+    const errorMessage = document.createElement("p");
+    errorMessage.classList.add("errorMessage");
+    errorMessage.innerHTML = `What izzz thizzzz?! Chef de Partie says no salads like that exist! Please select other ingredients and try again!`;
+
+    imgDiv.append(errorMessage);
 
     document.querySelector("#saladCombo").append(imgDiv);
   }
-
-  // Toggle label colors on click to notify the user a selection has been made
-  app.changeLabelColor = () => {
-    app.labels = document.querySelectorAll("label");
-    app.labels.forEach((label) => {
-      label.addEventListener(`click`, function () {
-        label.classList.toggle("labelColor");
-      });
-    });
-  };
 };
 
 // Toggle label colors on click to notify the user a selection has been made
@@ -124,9 +123,9 @@ app.userSelection = () => {
 // Added our init method and passed all functions that need to be called inside of it
 app.init = () => {
   app.ingredientForm = document.querySelector("form");
+  app.changeLabelColor();
   app.ingredientForm.reset();
   app.userSelection();
-  app.changeLabelColor();
 };
 
 // Initialized our init method
