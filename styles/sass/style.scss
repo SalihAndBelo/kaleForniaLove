@@ -98,6 +98,7 @@ legend {
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 
 .tossItUp:hover,
@@ -187,9 +188,10 @@ legend {
 //-----Error styling -----//
 .errorImage {
   display: flex;
+  padding: 4rem 8rem 2rem 0;
 
   img {
-    width: 65%;
+    width: 50%;
     margin: 0 auto;
     animation: pop 2s 1s linear;
   }
@@ -219,9 +221,14 @@ footer {
   background: $grassGreen;
   color: #ffffff;
   line-height: initial;
+  padding: 0.5rem 0;
 
   p {
-    margin: 0.2rem 0 0 0;
+    margin: 0;
+  }
+
+  p:nth-of-type(1) {
+    margin-bottom: 0.5rem;
   }
 
   a {
@@ -237,7 +244,7 @@ footer {
 }
 
 //-----Media Queries-----//
-@media (max-width: 600px) {
+@media (max-width: 775px) {
   h1 {
     font-size: 70px;
   }
@@ -255,10 +262,15 @@ footer {
   }
 
   .errorImage img {
-    width: 100%;
+    width: 90%;
+  }
+
+  .errorImage {
+    padding-right: 5rem;
   }
 
   .errorMessage {
     width: 80%;
+    font-size: 2rem;
   }
 }

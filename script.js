@@ -79,7 +79,7 @@ app.displaySelection = (saladRecipes) => {
     app.saladResults.classList.remove("saladCombo");
 
     const imgDiv = document.createElement("div");
-    imgDiv.innerHTML = `<div class ="errorImage"><img src="./assets/chef.png" alt="Handsome devil named Safi"></div>`;
+    imgDiv.innerHTML = `<div class ="errorImage"><img src="./assets/chef-safi.png" alt="Handsome devil named Safi"></div>`;
 
     const errorParagraph = document.createElement("p");
     errorParagraph.classList.add("errorMessage");
