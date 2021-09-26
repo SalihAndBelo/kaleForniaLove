@@ -2,10 +2,9 @@
 // GENERAL APP GOALS,
 
 // Record user ingredient selection(s) and store them in a variable.
-// Based on the user selection, pull a random salad recipe from API call which matches some or all of the selected ingredients.
-//    - Display the salad title, image, and link to the recipe on the page.
+// Based on the user selection, pull recipes from the API call which matches the selected ingredients.
+//    - Display the salad title, cuisine type, image, and link to the recipe on the page.
 // Add error handling if a user does not select anything from ingredient list or if there are not matching recipes based on user selection.
-// Add a reset function which will clear the page and allow the user to select new ingredients.
 
 // Namespace object
 const app = {};
@@ -14,6 +13,7 @@ const app = {};
 app.apiUrl = "https://api.edamam.com/api/recipes/v2";
 app.appKey = "b6093d9d19dda2ef504a3b36f99113b1";
 app.appId = "560f8d94";
+app.saladResults = document.querySelector("#saladCombo");
 
 // Get recipe data from the API
 app.getRecipes = (userInput) => {
@@ -31,10 +31,14 @@ app.getRecipes = (userInput) => {
       return response.json();
     })
     .then((data) => {
+      // Error handler -> if user does not select any ingredients
       document.querySelector("#saladCombo").innerHTML = "";
-      document.querySelector("#errorMessage").innerHTML = "";
-      console.log(data.hits);
-      app.displaySelection(data.hits);
+      if (userInput === "") {
+        app.saladResults.classList.remove("saladCombo");
+        alert("Please select some ingredients!");
+      } else {
+        app.displaySelection(data.hits);
+      }
     });
 };
 
@@ -55,11 +59,10 @@ app.displaySelection = (saladRecipes) => {
       const recipeLink = document.createElement("p");
       recipeLink.innerHTML = `<a href="${salad.recipe.url}">Click here to try this delicious recipe!</a>
 `;
-
       const saladRecommendations = document.createElement("div");
-      saladRecommendations.classList.add("recipeResults")
+      saladRecommendations.classList.add("recipeResults");
+
       const resultImageDiv = document.createElement("div");
-      
 
       saladRecommendations.append(title);
       saladRecommendations.append(cuisineType);
@@ -67,40 +70,36 @@ app.displaySelection = (saladRecipes) => {
       saladRecommendations.append(recipeLink);
       resultImageDiv.append(image);
 
-      const saladResults = document.querySelector("#saladCombo")
-      saladResults.classList.add("saladCombo")
-      saladResults.append(saladRecommendations);
+      app.saladResults.classList.add("saladCombo");
+      app.saladResults.append(saladRecommendations);
     });
   }
   // Error handler -> if there are no results, display error message on the page
   else {
-    const saladResults = document.querySelector("#saladCombo")
-    saladResults.classList.remove("saladCombo")
+    app.saladResults.classList.remove("saladCombo");
 
     const imgDiv = document.createElement("div");
-    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/chef.jpg" alt="Handsome devil named Safi"></div>`;
+    imgDiv.innerHTML = `<div class ="errorImage"><img src="./assets/chef.png" alt="Handsome devil named Safi"></div>`;
 
     const errorParagraph = document.createElement("p");
     errorParagraph.classList.add("errorMessage");
-    errorParagraph.innerHTML = `Chef de Partie doesn't approve of this! Please select a different set of ingredients from above and try again.`
-
+    errorParagraph.innerHTML = `Chef de Partie doesn't approve of this! Please select a different set of ingredients from above and try again.`;
 
     imgDiv.append(errorParagraph);
 
-    saladResults.append(imgDiv);
+    app.saladResults.append(imgDiv);
   }
-}
+};
 
-  // Toggle label colors on click to notify the user a selection has been made
-  app.changeLabelColor = () => {
-    app.labels = document.querySelectorAll("label");
-    app.labels.forEach((label) => {
-      label.addEventListener(`click`, function () {
-        label.classList.toggle("labelColor");
-      });
+// Toggle label colors on click to notify the user a selection has been made
+app.changeLabelColor = () => {
+  const labels = document.querySelectorAll("label");
+  labels.forEach((label) => {
+    label.addEventListener(`click`, function () {
+      label.classList.toggle("labelColor");
     });
-  };
-
+  });
+};
 
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
@@ -118,20 +117,19 @@ app.userSelection = () => {
 
     // Convert array of values into a string
     let userSelectedIngredients = ingredientArray.toString();
-    console.log(userSelectedIngredients);
 
     // Pass the values as an argument to the API call
     app.getRecipes(userSelectedIngredients);
   });
 };
 
-// Added our init method and passed all functions that need to be called inside of it
+// Added init method and passed all functions that need to be called inside of it
 app.init = () => {
   app.ingredientForm = document.querySelector("form");
   app.ingredientForm.reset();
-  app.userSelection();
   app.changeLabelColor();
+  app.userSelection();
 };
 
-// Initialized our init method
+// Initialized init method
 app.init();
