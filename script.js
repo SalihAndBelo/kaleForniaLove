@@ -31,8 +31,13 @@ app.getRecipes = (userInput) => {
       return response.json();
     })
     .then((data) => {
+      // Error handler -> if user does not select any ingredients
       document.querySelector("#saladCombo").innerHTML = "";
-      app.displaySelection(data.hits);
+      if (userInput === "") {
+        alert("Please select some ingredients!");
+      } else {
+        app.displaySelection(data.hits);
+      }
     });
 };
 
@@ -55,6 +60,7 @@ app.displaySelection = (saladRecipes) => {
 `;
       const saladRecommendations = document.createElement("div");
       saladRecommendations.classList.add("recipeResults");
+
       const resultImageDiv = document.createElement("div");
 
       saladRecommendations.append(title);
@@ -74,7 +80,7 @@ app.displaySelection = (saladRecipes) => {
     saladResults.classList.remove("saladCombo");
 
     const imgDiv = document.createElement("div");
-    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/chef.jpg" alt="Handsome devil named Safi"></div>`;
+    imgDiv.innerHTML = `<div class ="errorImage"><img src ="./assets/chef.png" alt="Handsome devil named Safi"></div>`;
 
     const errorParagraph = document.createElement("p");
     errorParagraph.classList.add("errorMessage");
@@ -88,8 +94,8 @@ app.displaySelection = (saladRecipes) => {
 
 // Toggle label colors on click to notify the user a selection has been made
 app.changeLabelColor = () => {
-  app.labels = document.querySelectorAll("label");
-  app.labels.forEach((label) => {
+  const labels = document.querySelectorAll("label");
+  labels.forEach((label) => {
     label.addEventListener(`click`, function () {
       label.classList.toggle("labelColor");
     });
@@ -122,8 +128,8 @@ app.userSelection = () => {
 // Added our init method and passed all functions that need to be called inside of it
 app.init = () => {
   app.ingredientForm = document.querySelector("form");
-  app.changeLabelColor();
   app.ingredientForm.reset();
+  app.changeLabelColor();
   app.userSelection();
 };
 

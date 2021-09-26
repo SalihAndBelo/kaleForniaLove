@@ -313,6 +313,13 @@ legend {
   letter-spacing: 4px;
 }
 
+.errorMessage {
+  font-family: "Comic Neue", cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
 body {
   background-color: #fff;
 }
@@ -340,6 +347,10 @@ h3 {
   text-align: center;
   color: #5ea241;
 }
+.greetingContainer img {
+  width: 20%;
+  margin: 1rem auto 0 auto;
+}
 .greetingContainer p {
   width: 50%;
   margin: 0.5rem auto;
@@ -359,7 +370,8 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #f5deb3;
+  background: #ffe5d9;
+  padding: 2rem 0;
 }
 
 fieldset {
@@ -376,10 +388,6 @@ fieldset {
   margin-bottom: 2rem;
 }
 
-.greens {
-  margin-top: 3rem;
-}
-
 legend {
   color: #f27059;
   height: 35px;
@@ -390,26 +398,6 @@ legend {
 .ingredientForm input {
   position: absolute;
   opacity: 0;
-}
-
-label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-  width: 150px;
-  text-align: center;
-  z-index: 20;
 }
 
 .checkboxContainer {
@@ -425,11 +413,31 @@ label {
           align-items: center;
   margin: 1rem;
 }
+.checkboxContainer label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 150px;
+  text-align: center;
+  z-index: 30;
+  cursor: pointer;
+}
 .checkboxContainer img {
   width: 100%;
 }
 
-.checkboxContainer label:hover {
+.checkboxContainer label:hover,
+.checkboxContainer label:focus {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -450,10 +458,10 @@ label {
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
-  margin-bottom: 3rem;
 }
 
-.tossItUp:hover {
+.tossItUp:hover,
+.tossItUp:focus {
   -webkit-animation: shakeItUp 1s cubic-bezier(0, 1.5, 1, 1.5) both;
           animation: shakeItUp 1s cubic-bezier(0, 1.5, 1, 1.5) both;
   background: #fd8e01;
@@ -499,16 +507,6 @@ label {
 .saladCombo {
   background-color: #f27059;
   padding: 2rem 0;
-}
-
-.errorImage {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.errorImage img {
-  width: 40%;
-  margin: 0 auto;
 }
 
 .recipeResults {
@@ -575,32 +573,51 @@ label {
 .errorImage img {
   width: 50%;
   margin: 0 auto;
+  -webkit-animation: pop 2s 1s linear;
+          animation: pop 2s 1s linear;
 }
 
 .errorMessage {
   text-align: center;
-  color: white;
-  width: 70%;
-  margin: 2rem auto;
-  background-color: #5ea241;
+  width: 60%;
+  margin: 0 auto;
+  color: #fff;
+  background: #5ea241;
   border-radius: 50px;
-  padding: 1rem 0px 1rem 0px;
+  margin-bottom: 2rem;
+  -webkit-animation: pop 2s 1s linear;
+          animation: pop 2s 1s linear;
+  padding: 1rem;
 }
 
+@-webkit-keyframes pop {
+  50% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+}
+
+@keyframes pop {
+  50% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+}
 footer {
-  background-color: #5ea241;
-  color: white;
-  text-decoration: none;
   text-align: center;
+  background: #5ea241;
+  color: #ffffff;
+  line-height: initial;
 }
-
+footer p {
+  margin: 0;
+}
 footer a {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
-
-footer p {
-  padding: 0px;
-  margin: 0px;
-  font-size: 1.25rem;
+footer a:hover, footer a:focus {
+  color: #fd8e01;
 }
