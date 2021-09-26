@@ -72,10 +72,20 @@ app.displaySelection = (saladRecipes) => {
 
       app.saladResults.classList.add("saladCombo");
       app.saladResults.append(saladRecommendations);
+
+
+      window.scrollTo({
+        top: 5300,
+        left: 0,
+        behavior: 'smooth'
+      });
+
     });
   }
   // Error handler -> if there are no results, display error message on the page
   else {
+
+
     app.saladResults.classList.remove("saladCombo");
 
     const imgDiv = document.createElement("div");
@@ -88,7 +98,14 @@ app.displaySelection = (saladRecipes) => {
     imgDiv.append(errorParagraph);
 
     app.saladResults.append(imgDiv);
+
+    window.scrollTo({
+      top:5300,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
+
 };
 
 // Toggle label colors on click to notify the user a selection has been made
@@ -101,11 +118,11 @@ app.changeLabelColor = () => {
   });
 };
 
+
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
   app.ingredientForm.addEventListener("submit", function (e) {
     e.preventDefault();
-
     // Select all the checked checkboxes
     const ingredients = document.querySelectorAll(
       "input[name=ingredient]:checked"
