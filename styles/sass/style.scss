@@ -245,12 +245,21 @@ footer {
 
 //-----Media Queries-----//
 @media (max-width: 775px) {
+  legend {
+    margin-bottom: 2rem;
+  }
+
   h1 {
     font-size: 70px;
   }
 
   .greetingContainer img {
     width: 40%;
+  }
+
+  .greetingContainer p {
+    width: 95%;
+    margin: 1rem auto;
   }
 
   .checkboxContainer label {
