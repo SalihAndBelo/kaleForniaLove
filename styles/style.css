@@ -646,6 +646,11 @@ footer a:hover, footer a:focus {
     width: 40%;
   }
 
+  .greetingContainer p {
+    width: 95%;
+    margin: 1rem auto;
+  }
+
   .checkboxContainer label {
     width: 100px;
   }
