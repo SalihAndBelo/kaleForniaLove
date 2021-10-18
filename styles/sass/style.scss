@@ -45,7 +45,7 @@ fieldset {
 }
 
 legend {
-  color: $bitterSweet;
+  color: $charcoal;
   height: 35px;
   border-radius: 6px;
   margin-bottom: 1rem;
@@ -53,7 +53,15 @@ legend {
 
 .ingredientForm input {
   position: absolute;
-  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .checkboxContainer {
@@ -90,12 +98,12 @@ legend {
 
 .tossItUp {
   padding: 1rem 2.5rem;
-  background: $bitterSweet;
+  background: $grassGreen;
   border-radius: 20px;
   border: none;
-  color: $napoliYellow;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
@@ -103,32 +111,32 @@ legend {
 .tossItUp:hover,
 .tossItUp:focus {
   animation: shakeItUp 1s cubic-bezier(0, 1.5, 1, 1.5) both;
-  background: $darkOrange;
-}
+  background: #2a623b;
 
-@keyframes shakeItUp {
-  10%,
-  90% {
-    transform: translate3d(-4px, 0, 0);
-  }
-  20%,
-  80% {
-    transform: translate3d(5px, 0, 0);
-  }
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-5px, 0, 0);
-  }
-  40%,
-  60% {
-    transform: translate3d(10px, 0, 0);
+  @keyframes shakeItUp {
+    10%,
+    90% {
+      transform: translate3d(-4px, 0, 0);
+    }
+    20%,
+    80% {
+      transform: translate3d(5px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-5px, 0, 0);
+    }
+    40%,
+    60% {
+      transform: translate3d(10px, 0, 0);
+    }
   }
 }
 
 //-----#saladCombo-----//
 .saladCombo {
-  background-color: #f27059;
+  background-color: $melon;
   padding: 2rem 0;
 }
 
@@ -137,11 +145,12 @@ legend {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background-color: $meadowGreen;
-  color: $darkOrange;
+  background-color: #fff;
+  color: $charcoal;
   margin: 4rem auto;
   text-align: center;
   width: 50%;
+  border-radius: 6% 94% 6% 94% / 94% 6% 94% 6%;
 
   h2 {
     margin-top: 2rem;
@@ -157,15 +166,16 @@ legend {
 
 .recipeResults a {
   text-decoration: none;
-  color: $darkOrange;
-  border-bottom: 1px solid white;
+  color: $charcoal;
+  border: none;
   margin-top: 3rem;
   margin-bottom: 3rem;
   transition: color 0.3s ease;
+  font-weight: bold;
 
   &:hover,
   &:focus {
-    color: white;
+    color: $bitterSweet;
   }
 }
 
@@ -173,8 +183,7 @@ legend {
   margin: 2rem auto;
 
   img {
-    -webkit-box-shadow: 16px 17px 0px 6px #ffe402;
-    box-shadow: 16px 17px 0px 6px #ffe402;
+    box-shadow: 16px 17px 0px 6px $napoliYellow;
   }
 }
 
@@ -187,10 +196,10 @@ legend {
 //-----Error styling -----//
 .errorImage {
   display: flex;
-  padding: 4rem 8rem 2rem 0;
+  padding: 4rem 8rem 0 0;
 
   img {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     animation: pop 2s 1s linear;
   }
@@ -198,7 +207,7 @@ legend {
 
 .errorMessage {
   text-align: center;
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   color: #fff;
   background: $grassGreen;
@@ -217,8 +226,8 @@ legend {
 //-----Footer-----//
 footer {
   text-align: center;
-  background: $grassGreen;
-  color: #ffffff;
+  background: #fff;
+  color: $charcoal;
   line-height: initial;
   padding: 0.5rem 0;
 
@@ -232,7 +241,7 @@ footer {
 
   a {
     text-decoration: none;
-    color: #ffffff;
+    color: $charcoal;
     transition: color 0.3s ease;
 
     &:hover,

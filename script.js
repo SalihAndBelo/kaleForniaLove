@@ -47,7 +47,7 @@ app.displaySelection = (saladRecipes) => {
   if (saladRecipes.length > 0) {
     saladRecipes.forEach((salad) => {
       const title = document.createElement("h2");
-      title.innerText = salad.recipe.label;
+      title.textContent = salad.recipe.label;
 
       const cuisineType = document.createElement("h3");
       cuisineType.innerHTML = `Cuisine Type: <span>${salad.recipe.cuisineType[0]}</span>`;

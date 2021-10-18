@@ -303,7 +303,6 @@ form {
 legend {
   font-family: "Cormorant Garamond", serif;
   font-size: 33px;
-  font-weight: bolder;
   letter-spacing: 2px;
 }
 
@@ -394,7 +393,7 @@ fieldset {
 }
 
 legend {
-  color: #f27059;
+  color: #36454f;
   height: 35px;
   border-radius: 6px;
   margin-bottom: 1rem;
@@ -402,7 +401,16 @@ legend {
 
 .ingredientForm input {
   position: absolute;
-  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .checkboxContainer {
@@ -454,13 +462,13 @@ legend {
 
 .tossItUp {
   padding: 1rem 2.5rem;
-  background: #f27059;
+  background: #5ea241;
   border-radius: 20px;
   border: none;
-  color: #ffe402;
+  color: white;
   cursor: pointer;
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
@@ -469,9 +477,8 @@ legend {
 .tossItUp:focus {
   -webkit-animation: shakeItUp 1s cubic-bezier(0, 1.5, 1, 1.5) both;
           animation: shakeItUp 1s cubic-bezier(0, 1.5, 1, 1.5) both;
-  background: #fd8e01;
+  background: #2a623b;
 }
-
 @-webkit-keyframes shakeItUp {
   10%, 90% {
     -webkit-transform: translate3d(-4px, 0, 0);
@@ -490,7 +497,6 @@ legend {
             transform: translate3d(10px, 0, 0);
   }
 }
-
 @keyframes shakeItUp {
   10%, 90% {
     -webkit-transform: translate3d(-4px, 0, 0);
@@ -509,8 +515,9 @@ legend {
             transform: translate3d(10px, 0, 0);
   }
 }
+
 .saladCombo {
-  background-color: #f27059;
+  background-color: #f8ad9d;
   padding: 2rem 0;
 }
 
@@ -527,11 +534,12 @@ legend {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background-color: #b0e3a7;
-  color: #fd8e01;
+  background-color: #fff;
+  color: #36454f;
   margin: 4rem auto;
   text-align: center;
   width: 50%;
+  border-radius: 6% 94% 6% 94%/94% 6% 94% 6%;
 }
 .recipeResults h2 {
   margin-top: 2rem;
@@ -545,15 +553,16 @@ legend {
 
 .recipeResults a {
   text-decoration: none;
-  color: #fd8e01;
-  border-bottom: 1px solid white;
+  color: #36454f;
+  border: none;
   margin-top: 3rem;
   margin-bottom: 3rem;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
+  font-weight: bold;
 }
 .recipeResults a:hover, .recipeResults a:focus {
-  color: white;
+  color: #f27059;
 }
 
 .recipeResults div {
@@ -561,7 +570,7 @@ legend {
 }
 .recipeResults div img {
   -webkit-box-shadow: 16px 17px 0px 6px #ffe402;
-  box-shadow: 16px 17px 0px 6px #ffe402;
+          box-shadow: 16px 17px 0px 6px #ffe402;
 }
 
 .recipeResults p {
@@ -574,10 +583,10 @@ legend {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 4rem 8rem 2rem 0;
+  padding: 4rem 8rem 0 0;
 }
 .errorImage img {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   -webkit-animation: pop 2s 1s linear;
           animation: pop 2s 1s linear;
@@ -585,7 +594,7 @@ legend {
 
 .errorMessage {
   text-align: center;
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   color: #fff;
   background: #5ea241;
@@ -611,8 +620,8 @@ legend {
 }
 footer {
   text-align: center;
-  background: #5ea241;
-  color: #ffffff;
+  background: #fff;
+  color: #36454f;
   line-height: initial;
   padding: 0.5rem 0;
 }
@@ -624,7 +633,7 @@ footer p:nth-of-type(1) {
 }
 footer a {
   text-decoration: none;
-  color: #ffffff;
+  color: #36454f;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
