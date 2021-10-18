@@ -21,7 +21,7 @@ app.getRecipes = (userInput) => {
   url.search = new URLSearchParams({
     app_key: app.appKey,
     app_id: app.appId,
-    q: userInput,
+    q: `${userInput} salad`,
     dishType: "salad",
     type: "public",
   });
