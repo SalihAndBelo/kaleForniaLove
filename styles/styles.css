@@ -142,24 +142,24 @@ select {
 }
 
 button,
-html [type=button],
-[type=reset],
-[type=submit] {
+html [type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -186,25 +186,25 @@ textarea {
   overflow: auto;
 }
 
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
 }
 
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type=search]::-webkit-search-cancel-button,
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -328,11 +328,6 @@ body {
   background-color: #fff;
 }
 
-.mainWrapper {
-  max-width: 1650px;
-  margin: 0 auto;
-}
-
 h1,
 h2,
 h3 {
@@ -351,16 +346,23 @@ h3 {
   text-align: center;
   color: #5ea241;
 }
+
 .greetingContainer img {
   width: 20%;
   margin: 1rem auto 0 auto;
 }
+
 .greetingContainer p {
   width: 50%;
   margin: 0.5rem auto;
 }
+
 .greetingContainer p:nth-of-type(2) {
   margin-bottom: 3.5rem;
+}
+
+.ingredientSelection {
+  background: #ffe5d9;
 }
 
 .ingredientForm {
@@ -374,7 +376,8 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #ffe5d9;
+  max-width: 1650px;
+  margin: 0 auto;
   padding: 2rem 0;
 }
 
@@ -426,6 +429,7 @@ legend {
           align-items: center;
   margin: 1rem;
 }
+
 .checkboxContainer label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -445,6 +449,7 @@ legend {
   z-index: 30;
   cursor: pointer;
 }
+
 .checkboxContainer img {
   width: 100%;
 }
@@ -479,38 +484,50 @@ legend {
           animation: shakeItUp 1s cubic-bezier(0, 1.5, 1, 1.5) both;
   background: #2a623b;
 }
+
 @-webkit-keyframes shakeItUp {
-  10%, 90% {
+  10%,
+  90% {
     -webkit-transform: translate3d(-4px, 0, 0);
             transform: translate3d(-4px, 0, 0);
   }
-  20%, 80% {
+  20%,
+  80% {
     -webkit-transform: translate3d(5px, 0, 0);
             transform: translate3d(5px, 0, 0);
   }
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     -webkit-transform: translate3d(-5px, 0, 0);
             transform: translate3d(-5px, 0, 0);
   }
-  40%, 60% {
+  40%,
+  60% {
     -webkit-transform: translate3d(10px, 0, 0);
             transform: translate3d(10px, 0, 0);
   }
 }
+
 @keyframes shakeItUp {
-  10%, 90% {
+  10%,
+  90% {
     -webkit-transform: translate3d(-4px, 0, 0);
             transform: translate3d(-4px, 0, 0);
   }
-  20%, 80% {
+  20%,
+  80% {
     -webkit-transform: translate3d(5px, 0, 0);
             transform: translate3d(5px, 0, 0);
   }
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     -webkit-transform: translate3d(-5px, 0, 0);
             transform: translate3d(-5px, 0, 0);
   }
-  40%, 60% {
+  40%,
+  60% {
     -webkit-transform: translate3d(10px, 0, 0);
             transform: translate3d(10px, 0, 0);
   }
@@ -539,13 +556,15 @@ legend {
   margin: 4rem auto;
   text-align: center;
   width: 50%;
-  border-radius: 6% 94% 6% 94%/94% 6% 94% 6%;
+  border-radius: 6% 94% 6% 94% / 94% 6% 94% 6%;
 }
+
 .recipeResults h2 {
   margin-top: 2rem;
   padding: 0 2rem;
   text-transform: capitalize;
 }
+
 .recipeResults h3 {
   margin-top: 1rem;
   text-transform: capitalize;
@@ -561,6 +580,7 @@ legend {
   transition: color 0.3s ease;
   font-weight: bold;
 }
+
 .recipeResults a:hover, .recipeResults a:focus {
   color: #f27059;
 }
@@ -568,6 +588,7 @@ legend {
 .recipeResults div {
   margin: 2rem auto;
 }
+
 .recipeResults div img {
   -webkit-box-shadow: 16px 17px 0px 6px #ffe402;
           box-shadow: 16px 17px 0px 6px #ffe402;
@@ -585,6 +606,7 @@ legend {
   display: flex;
   padding: 4rem 8rem 0 0;
 }
+
 .errorImage img {
   width: 60%;
   margin: 0 auto;
@@ -618,6 +640,7 @@ legend {
             transform: scale(1.25);
   }
 }
+
 footer {
   text-align: center;
   background: #fff;
@@ -625,18 +648,22 @@ footer {
   line-height: initial;
   padding: 0.5rem 0;
 }
+
 footer p {
   margin: 0;
 }
+
 footer p:nth-of-type(1) {
   margin-bottom: 0.5rem;
 }
+
 footer a {
   text-decoration: none;
   color: #36454f;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
+
 footer a:hover, footer a:focus {
   color: #fd8e01;
 }
@@ -645,36 +672,28 @@ footer a:hover, footer a:focus {
   legend {
     margin-bottom: 2rem;
   }
-
   h1 {
     font-size: 70px;
   }
-
   .greetingContainer img {
     width: 40%;
   }
-
   .greetingContainer p {
     width: 95%;
     margin: 1rem auto;
   }
-
   .checkboxContainer label {
     width: 100px;
   }
-
   .recipeResults {
     width: 100%;
   }
-
   .errorImage img {
     width: 90%;
   }
-
   .errorImage {
     padding-right: 5rem;
   }
-
   .errorMessage {
     width: 80%;
     font-size: 2rem;

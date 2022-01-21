@@ -112,13 +112,14 @@ app.userSelection = () => {
     const ingredients = document.querySelectorAll(
       "input[name=ingredient]:checked"
     );
+
     // Iterate each node list object and return the value of the checkbox into an array
-    let ingredientArray = [...ingredients].map((ingredient) => {
+    const ingredientArray = [...ingredients].map((ingredient) => {
       return ingredient.value;
     });
 
     // Convert array of values into a string
-    let userSelectedIngredients = ingredientArray.toString();
+    const userSelectedIngredients = ingredientArray.toString();
 
     // Pass the values as an argument to the API call
     app.getRecipes(userSelectedIngredients);

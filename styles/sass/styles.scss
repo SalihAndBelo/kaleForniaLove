@@ -27,11 +27,16 @@
 }
 
 //-----.ingrdientSelection-----//
+.ingredientSelection {
+  background: #ffe5d9;
+}
+
 .ingredientForm {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #ffe5d9;
+  max-width: 1650px;
+  margin: 0 auto;
   padding: 2rem 0;
 }
 
