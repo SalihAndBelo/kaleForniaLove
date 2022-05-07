@@ -93,25 +93,13 @@ app.displaySelection = (saladRecipes) => {
   }
 };
 
-// Toggle label colors on click to notify the user a selection has been made
-app.changeLabelColor = () => {
-  const labels = document.querySelectorAll("label");
-  labels.forEach((label) => {
-    label.addEventListener(`click`, function () {
-      label.classList.toggle("labelColor");
-    });
-  });
-};
-
 // Get user selection and pass it as an argument to the q param
 app.userSelection = () => {
   app.ingredientForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     // Select all the checked checkboxes
-    const ingredients = document.querySelectorAll(
-      "input[name=ingredient]:checked"
-    );
+    const ingredients = document.querySelectorAll("input[name=ingredient]:checked");
 
     // Iterate each node list object and return the value of the checkbox into an array
     const ingredientArray = [...ingredients].map((ingredient) => {
@@ -130,7 +118,6 @@ app.userSelection = () => {
 app.init = () => {
   app.ingredientForm = document.querySelector("form");
   app.ingredientForm.reset();
-  app.changeLabelColor();
   app.userSelection();
 };
 

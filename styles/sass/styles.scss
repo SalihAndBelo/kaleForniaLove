@@ -75,14 +75,14 @@ legend {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem;
+  margin: 2rem;
 
   label {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 150px;
+    width: 100px;
     text-align: center;
     z-index: 30;
     cursor: pointer;
@@ -96,6 +96,11 @@ legend {
 .checkboxContainer label:hover,
 .checkboxContainer label:focus {
   transform: scale(1.1);
+}
+
+.checkboxContainer input:checked + label {
+  background: $melon;
+  border-radius: 30px;
 }
 
 .labelColor {
@@ -200,6 +205,18 @@ legend {
   padding: 0 1rem;
 }
 
+.takeMeUp {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+  background: $charcoal;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
 //-----Error styling -----//
 .errorImage {
   display: flex;
@@ -262,6 +279,7 @@ footer {
 @media (max-width: 775px) {
   legend {
     margin-bottom: 2rem;
+    font-size: 25px;
   }
 
   h1 {
@@ -277,12 +295,22 @@ footer {
     margin: 1rem auto;
   }
 
-  .checkboxContainer label {
-    width: 100px;
+  .checkboxContainer {
+    img {
+      width: 70%;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .tossItUp {
+    font-size: 25px;
   }
 
   .recipeResults {
-    width: 100%;
+    width: 95%;
   }
 
   .errorImage img {
