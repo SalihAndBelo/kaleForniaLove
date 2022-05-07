@@ -311,6 +311,10 @@ footer {
 
   .recipeResults {
     width: 95%;
+
+    div img {
+      box-shadow: 9px 8px 0px 3px #ffe402;
+    }
   }
 
   .errorImage img {

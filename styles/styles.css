@@ -697,6 +697,10 @@ footer a:hover, footer a:focus {
   .recipeResults {
     width: 95%;
   }
+  .recipeResults div img {
+    -webkit-box-shadow: 9px 8px 0px 3px #ffe402;
+            box-shadow: 9px 8px 0px 3px #ffe402;
+  }
 
   .errorImage img {
     width: 90%;
